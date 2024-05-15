@@ -1,0 +1,96 @@
+* body {
+    background-color: white;
+}
+
+
+input {
+    width: 300px;
+    height: 30px;
+    border-color: 2px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+  }
+
+  #email, #password {
+    border: 2px solid #ccc; /* Warna border awal */
+    border-radius: 5px;
+    padding: 5px;
+    transition: border-color 0.3s ease; /* Animasi perubahan warna border */
+}
+
+#email:focus {
+    border-color: #3760F2; /* Warna border saat diklik */
+    /* outline: none; */
+}
+
+#password:focus {
+    border-color: #3760F2; /* Warna border saat diklik */
+    /* outline: none; */
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* Mengatur posisi horizontal ke tengah */
+    align-items: center; /* Mengatur posisi vertikal ke tengah */
+    height: 100vh; /* Menggunakan seluruh tinggi viewport */
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Membagi grid menjadi dua kolom */
+    grid-gap: 20px; /* Jarak antara kolom */
+    align-items: center; /* Posisi vertikal tengah */
+    margin-top: 40px;
+    width: 1000px;
+    height: 500px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: black; /* Mengganti warna teks menjadi hitam */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.foto {
+    /* CSS untuk menampilkan foto */
+    background-image: url('../img/logoLogin.jpg');
+    background-size: cover;
+    background-position: center;
+
+    margin-left: 45px;
+
+    width: 85%; /* Lebar elemen foto 100% dari parent */
+    height: 85%; /* Tinggi elemen foto 100% dari parent */
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%; /* Menempatkan garis di tengah-tengah grid */
+    width: 2px; /* Ketebalan garis */
+    background-color: gray; /* Warna garis */
+    transform: translateX(-50%); /* Memindahkan garis ke kiri setengah dari lebar garis */
+}
+
+.login-btn {
+    width: 311px;
+    height: 30px;
+    border: none;
+    background-color: #3760F2;
+    color: white;
+    border-radius: 5px;
+}
+.login-btn:hover {
+    background-color: #0026ff;
+}
