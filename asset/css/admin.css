@@ -2,7 +2,6 @@
     background-color: white;
 }
 
-
 input {
     width: 300px;
     height: 30px;
@@ -11,56 +10,49 @@ input {
     transition: border-color 0.3s ease;
   }
 
-  #email, #password {
+#email, #password {
     border: 2px solid #ccc; /* Warna border awal */
     border-radius: 5px;
     padding: 5px;
     transition: border-color 0.3s ease; /* Animasi perubahan warna border */
 }
-
 #email:focus {
-    border-color: #3760F2; /* Warna border saat diklik */
-    /* outline: none; */
+    border-color: #3760F2;
 }
-
 #password:focus {
-    border-color: #3760F2; /* Warna border saat diklik */
-    /* outline: none; */
+    border-color: #3760F2; 
 }
 
 .container {
     display: flex;
-    justify-content: center; /* Mengatur posisi horizontal ke tengah */
-    align-items: center; /* Mengatur posisi vertikal ke tengah */
-    height: 100vh; /* Menggunakan seluruh tinggi viewport */
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
 }
 
 .card {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Membagi grid menjadi dua kolom */
-    grid-gap: 20px; /* Jarak antara kolom */
-    align-items: center; /* Posisi vertikal tengah */
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    align-items: center; 
     margin-top: 40px;
     width: 1000px;
     height: 500px;
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 10px;
     background-color: #ffffff;
-    color: black; /* Mengganti warna teks menjadi hitam */
+    color: black; /* warna teks */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     position: relative;
 }
 
 .foto {
-    /* CSS untuk menampilkan foto */
     background-image: url('../img/logoLogin.jpg');
     background-size: cover;
     background-position: center;
-
     margin-left: 45px;
-
-    width: 85%; /* Lebar elemen foto 100% dari parent */
-    height: 85%; /* Tinggi elemen foto 100% dari parent */
+    width: 85%; 
+    height: 85%;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
@@ -77,7 +69,7 @@ form {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 50%; /* Menempatkan garis di tengah-tengah grid */
+    left: 50%; /* garis di tengah grid */
     width: 2px; /* Ketebalan garis */
     background-color: gray; /* Warna garis */
     transform: translateX(-50%); /* Memindahkan garis ke kiri setengah dari lebar garis */

@@ -1,15 +1,11 @@
 <?php
 require_once './../base.php';
 
-
-// Proses login hanya dilakukan jika ada data yang dikirimkan melalui metode POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
-
     $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
     $result = $db->query($sql);
-
     if ($result->rowCount() > 0) {
         header("Location: beranda.php");
         exit();
