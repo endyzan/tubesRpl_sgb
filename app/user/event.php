@@ -4,12 +4,14 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="T&C SGB">
+        <meta name="description" content="Event SGB">
         <link rel="stylesheet" href="style/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <title>SYARAT DAN KETENTUAN</title>
+        <title>Event</title>
         <style>
             * {
+                margin: 0;
+                padding: 0;
                 box-sizing: border-box;
                 outline: none;
                 border: none;
@@ -105,54 +107,44 @@
             }
             /* ---------------------------------Menu End--------------------------------- */
 
-            .main-image img {
-                width: 100%;
-                margin-top: 150px;
+            .judul_event {
+                display: flex;
+                background-color: black;
+                height: 80px;
+                align-items: center;
+                justify-content: center;
+                border-radius: 20px;
+                width: 550px;
+                margin: 200px 480px 30px 450px;
             }
-
-            .terms, .payment-methods {
-                margin-bottom: 40px;
-                padding: 50px;
-            }
-
-            .terms h2, .payment-methods h2 {
-                background-color: #000;
-                color: white;
+            .judul_event p {
+                font-size: 1.3rem;
                 text-align: center;
-                padding: 1rem 0;
-                margin: 2rem auto;
-                max-width: 400px;
+                color: white;
+                font-weight: bold;
+            }
+
+            .Event {
+                display: flex;
+                border-bottom: 1px solid #ccc;
+                background-color: #e0e0e0;
                 border-radius: 40px;
-                font-size: 1.5rem;
-
+                margin: 0px 90px 70px 90px;
+                padding: 30px;
             }
-            .terms h3, .payment-methods h3 {
-                color: black;
-                font-size: 1.5rem;
+            .Event iframe {
+                border-radius: 10px;
+                object-fit: cover;
+                margin-right: 30px;
             }
 
-            .terms p {
-                color: black;
+            .Event strong {
+                display: block;
+                margin-bottom: 10px;
                 font-size: 1.2rem;
             }
 
-            .terms ol li strong {
-                color: black;
-                font-size: 1.2rem;
-            }
-
-            .terms ol li {
-                color: black;
-                font-size: 1.2rem;
-            }
-
-            .terms ol li {
-                color: black;
-                font-size: 1.2rem;
-            }
-
-            .payment-methods ol li {
-                color: black;
+            .Event p {
                 font-size: 1.2rem;
             }
 
@@ -185,7 +177,6 @@
             .footer p {
                 margin: 0;
             }
-
             body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -289,58 +280,36 @@
             </div>
             <!-- Menu End -->
         </div>
-        
-        <main>
-            <div class="main-image">
-                <img src="../../asset/img/SGB_syarat.jpg" alt="Stadion Gelora Bangkalan">
-            </div>
-            
-            <section class="terms">
-                <h2>Syarat dan Ketentuan</h2>
-                <p>Berikut adalah syarat dan ketentuan untuk pembelian dan penggunaan tiket Stadion Gelora Bangkalan:</p>
-                <ol>
-                    <li>
-                        <strong>Pemesanan Tiket:</strong> Tiket harus dipesan paling lambat satu hari (H-1) sebelum tanggal kunjungan yang telah Anda pilih. Mohon pastikan Anda memesan tiket Anda tepat waktu.
-                    </li>
-                    <li>
-                        <strong>Masa Berlaku Tiket:</strong> Tiket berlaku hanya pada tanggal kunjungan yang telah Anda pilih saat pembelian. Tidak ada pengecualian.
-                    </li>
-                    <li>
-                        <strong>Penggunaan Hari:</strong> Tiket berlaku baik pada weekday maupun weekend. Anda dapat mengunjungi stadion kapan saja selama jadwal operasional pada tanggal yang telah ditentukan.
-                    </li>
-                    <li>
-                        <strong>Kebijakan Pembelian:</strong> Setelah tiket dibeli, tiket bersifat tetap dan hanya dapat digunakan dalam jangka waktu yang ditetapkan. Tidak ada opsi untuk memperpanjang masa berlaku tiket.
-                    </li>
-                    <li>
-                        <strong>Pembatasan Penggunaan:</strong> Tiket hanya berlaku untuk satu kali kunjungan. Setelah digunakan, tiket tidak dapat digunakan kembali.
-                    </li>
-                    <li>
-                        <strong>Kebijakan Pembatalan dan Pengembalian:</strong> Semua pembelian tiket bersifat final. Tidak ada opsi pembatalan atau pengembalian dana setelah pembelian tiket dilakukan.
-                    </li>
-                    <li>
-                        <strong>Perubahan Jadwal:</strong> Tiket tidak dapat dijadwalkan ulang atau diubah setelah pembelian. Harap pastikan tanggal kunjungan yang Anda pilih sudah sesuai dengan rencana Anda.
-                    </li>
-                </ol>
-                <p>Dengan membeli tiket, Anda setuju untuk mematuhi semua syarat dan ketentuan yang tercantum di atas. Terima kasih atas kerjasama Anda dan selamat menikmati kunjungan Anda ke Stadion Gelora Bangkalan!</p>
-            </section>
-            
-            <section class="payment-methods">
-                <h3>Metode Pembayaran</h3>
-                <ol>
-                    <li>Pembayaran dilakukan dengan transfer melalui ATM dan Internet Banking. ATM yang bisa digunakan untuk pembayaran yaitu BTN, BSI, BCA.</li>
-                    <li>Untuk pembayaran, pelanggan diharuskan untuk klik submit untuk proses pembayaran secara online dan memasukkan bukti pembayaran.</li>
-                    <li>Stadion Gelora Bangkalan tidak bertanggung jawab atas adanya penyalahgunaan alat pembayaran dalam bentuk apapun yang merupakan hak milik pelanggan.</li>
-                </ol>
-            </section>
-        </main>
+        <!-- Header Start -->
 
-        <div class="sticky-whatsapp">
-            <a href="https://wa.me/+62 878-5305-3661" target="_blank">
-                <img src="../../asset/img/logo_WA.png" alt="WhatsApp" class="whatsapp-logo">
-            </a>
-        </div>
+        <!-- Main Start -->
+        <div class="main">
+            <div class="content">
+                <div class="judul_event" id="event">
+                    <p>PERTUNJUKAN STADION GELORA BANGKALAN</p>
+                </div>
+                <div class="Event">
+                    <iframe 
+                    width="1800" height="250"
+                    src="https://www.youtube.com/embed/R1-5eCHT9M0?si=tlrTP3FoAOg0KAgc"></iframe>
+                    <div class="event_info">
+                        <p><strong> Pesta Rakyat Simpedes 2019 - Bank BRI cabang Bangkalan </strong></p>
+                        <p> PT Bank Rakyat Indonesia (BRI) mengadakan Pesta Rakyat Simpedes 2019 di kota Bangkalan di Stadion Gelora Bangkalan. 
+                            Pesta Rakyat Simpedes bertujuan untuk membangun kepercayaan diri UMKM dalam berinovasi dan berbisnis, 
+                            dengan kegiatan seperti layanan keuangan, kesehatan, kuliner, workshop UMKM, dan hiburan. Ada enam pilar acara, 
+                            termasuk Pasar, Pojok X'sis, Peduli, Pawai, Panen, dan Panggung. Acara ini juga memberikan hadiah menarik bagi 
+                            pengunjung dan nasabah BRI melalui undian Panen Hadiah Simpedes dan berbagai challenge. Acara dapat disaksikan 
+                            online melalui Kompas TV dan kanal Youtube Bank BRI. </p>
+                    </div>
+                </div>
+                
+                <div class="sticky-whatsapp">
+                    <a href="https://wa.me/+62 878-5305-3661" target="_blank">
+                        <img src="../../asset/img/logo_WA.png" alt="WhatsApp" class="whatsapp-logo">
+                    </a>
+                </div>
 
-        <div class="container">
+                <div class="container">
         <div class="section1">
             <h2>About Us</h2>
             <hr>
@@ -362,8 +331,10 @@
         </div>
     </div>
 
-        <div class="footer" id="footer">
-            <p>&copy; Copyright 2023 | Created By Kelompok_5</p>
+                <div class="footer" id="footer">
+                    <p>&copy; Copyright 2023 | Created By Kelompok_5</p>
+                </div>
+            </div>
         </div>
     </body>
 </html>

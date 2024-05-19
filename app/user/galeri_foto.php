@@ -4,12 +4,14 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="T&C SGB">
+        <meta name="description" content="GALERI SGB">
         <link rel="stylesheet" href="style/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <title>SYARAT DAN KETENTUAN</title>
+        <title>GALERI</title>
         <style>
             * {
+                margin: 0;
+                padding: 0;
                 box-sizing: border-box;
                 outline: none;
                 border: none;
@@ -105,55 +107,87 @@
             }
             /* ---------------------------------Menu End--------------------------------- */
 
-            .main-image img {
-                width: 100%;
-                margin-top: 150px;
+            /* ---------------------------------Content Start--------------------------------- */
+            .judul_galeri {
+                display: flex;
+                background-color: black;
+                height: 80px;
+                align-items: center;
+                justify-content: center;
+                border-radius: 20px;
+                width: 500px;
+                margin: 180px 40px 30px 450px;
             }
-
-            .terms, .payment-methods {
-                margin-bottom: 40px;
-                padding: 50px;
-            }
-
-            .terms h2, .payment-methods h2 {
-                background-color: #000;
-                color: white;
+            .judul_galeri p {
+                font-size: 1.3rem;
                 text-align: center;
-                padding: 1rem 0;
-                margin: 2rem auto;
-                max-width: 400px;
-                border-radius: 40px;
-                font-size: 1.5rem;
-
+                color: white;
+                font-weight: bold;
             }
-            .terms h3, .payment-methods h3 {
-                color: black;
-                font-size: 1.5rem;
-            }
-
-            .terms p {
-                color: black;
-                font-size: 1.2rem;
+            
+            .gallery-cart {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                justify-content: center;
+                margin: 30px 60px 30px 60px;
             }
 
-            .terms ol li strong {
-                color: black;
-                font-size: 1.2rem;
+            .img-container {
+                position: relative;
+                width: 100%;
+                padding-top: 75%;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
             }
 
-            .terms ol li {
-                color: black;
-                font-size: 1.2rem;
+            .img-container img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 20px;
+                transition: 0.2s linear;
             }
 
-            .terms ol li {
-                color: black;
-                font-size: 1.2rem;
+            .img-container:hover img {
+                transform: scale(1.1);
+                filter: brightness(120%);
             }
 
-            .payment-methods ol li {
-                color: black;
-                font-size: 1.2rem;
+            .popup-img {
+                position: fixed;
+                top: 0;
+                left: 0;
+                background: rgb(0, 0, 0, 0.9);
+                height: 100%;
+                width: 100%;
+                z-index: 999;
+                display: none;
+            }
+            .popup-img span {
+                position: absolute;
+                top: 0;
+                right: 10px;
+                font-size: 50px;
+                font-weight: bolder;
+                color: #fffbfb;
+                cursor: pointer;
+            }
+            .popup-img img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border: 5px solid#fffbfb;
+                border-radius: 5px;
+                width: 750px;
+                object-fit: cover;
             }
 
             .sticky-whatsapp {
@@ -289,58 +323,46 @@
             </div>
             <!-- Menu End -->
         </div>
-        
-        <main>
-            <div class="main-image">
-                <img src="../../asset/img/SGB_syarat.jpg" alt="Stadion Gelora Bangkalan">
-            </div>
-            
-            <section class="terms">
-                <h2>Syarat dan Ketentuan</h2>
-                <p>Berikut adalah syarat dan ketentuan untuk pembelian dan penggunaan tiket Stadion Gelora Bangkalan:</p>
-                <ol>
-                    <li>
-                        <strong>Pemesanan Tiket:</strong> Tiket harus dipesan paling lambat satu hari (H-1) sebelum tanggal kunjungan yang telah Anda pilih. Mohon pastikan Anda memesan tiket Anda tepat waktu.
-                    </li>
-                    <li>
-                        <strong>Masa Berlaku Tiket:</strong> Tiket berlaku hanya pada tanggal kunjungan yang telah Anda pilih saat pembelian. Tidak ada pengecualian.
-                    </li>
-                    <li>
-                        <strong>Penggunaan Hari:</strong> Tiket berlaku baik pada weekday maupun weekend. Anda dapat mengunjungi stadion kapan saja selama jadwal operasional pada tanggal yang telah ditentukan.
-                    </li>
-                    <li>
-                        <strong>Kebijakan Pembelian:</strong> Setelah tiket dibeli, tiket bersifat tetap dan hanya dapat digunakan dalam jangka waktu yang ditetapkan. Tidak ada opsi untuk memperpanjang masa berlaku tiket.
-                    </li>
-                    <li>
-                        <strong>Pembatasan Penggunaan:</strong> Tiket hanya berlaku untuk satu kali kunjungan. Setelah digunakan, tiket tidak dapat digunakan kembali.
-                    </li>
-                    <li>
-                        <strong>Kebijakan Pembatalan dan Pengembalian:</strong> Semua pembelian tiket bersifat final. Tidak ada opsi pembatalan atau pengembalian dana setelah pembelian tiket dilakukan.
-                    </li>
-                    <li>
-                        <strong>Perubahan Jadwal:</strong> Tiket tidak dapat dijadwalkan ulang atau diubah setelah pembelian. Harap pastikan tanggal kunjungan yang Anda pilih sudah sesuai dengan rencana Anda.
-                    </li>
-                </ol>
-                <p>Dengan membeli tiket, Anda setuju untuk mematuhi semua syarat dan ketentuan yang tercantum di atas. Terima kasih atas kerjasama Anda dan selamat menikmati kunjungan Anda ke Stadion Gelora Bangkalan!</p>
-            </section>
-            
-            <section class="payment-methods">
-                <h3>Metode Pembayaran</h3>
-                <ol>
-                    <li>Pembayaran dilakukan dengan transfer melalui ATM dan Internet Banking. ATM yang bisa digunakan untuk pembayaran yaitu BTN, BSI, BCA.</li>
-                    <li>Untuk pembayaran, pelanggan diharuskan untuk klik submit untuk proses pembayaran secara online dan memasukkan bukti pembayaran.</li>
-                    <li>Stadion Gelora Bangkalan tidak bertanggung jawab atas adanya penyalahgunaan alat pembayaran dalam bentuk apapun yang merupakan hak milik pelanggan.</li>
-                </ol>
-            </section>
-        </main>
+        <!-- Header Start -->
 
-        <div class="sticky-whatsapp">
-            <a href="https://wa.me/+62 878-5305-3661" target="_blank">
-                <img src="../../asset/img/logo_WA.png" alt="WhatsApp" class="whatsapp-logo">
-            </a>
-        </div>
+        <!-- Main Start -->
+        <div class="main">
+            <div class="content">
+                <div class="judul_galeri" id="galeri">
+                    <p>GALERI FOTO STADION GELORA BANGKALAN</p>
+                </div>
+                <div class="gallery-cart">
+                    <div class="img-container">
+                        <img src="../../asset/img/SGBGame_3.jpg" alt="gallery1">
+                    </div>
+                    <div class="img-container">
+                        <img src="../../asset/img/odong-odong.jpg" alt="gallery2">
+                    </div>
+                    <div class="img-container">
+                        <img src="../../asset/img/SGB_syarat.jpg" alt="gallery3">
+                    </div>
+                    <div class="img-container">
+                        <img src="../../asset/img/night_view.jpg" alt="gallery4">
+                    </div>
+                    <div class="img-container">
+                        <img src="../../asset/img/Rectangle 77.png" alt="gallery5">
+                    </div>
+                    <div class="img-container">
+                        <img src="../../asset/img/Rectangle 78.png" alt="gallery6">
+                    </div>
+                </div>
+                <div class="popup-img">
+                    <span>&times;</span>
+                    <img src="../../asset/img/SGBGame_3.jpg" alt="gallery7">
+                </div>
 
-        <div class="container">
+                <div class="sticky-whatsapp">
+                    <a href="https://wa.me/+62 878-5305-3661" target="_blank">
+                        <img src="../../asset/img/logo_WA.png" alt="WhatsApp" class="whatsapp-logo">
+                    </a>
+                </div>
+
+                <div class="container">
         <div class="section1">
             <h2>About Us</h2>
             <hr>
@@ -362,8 +384,13 @@
         </div>
     </div>
 
-        <div class="footer" id="footer">
-            <p>&copy; Copyright 2023 | Created By Kelompok_5</p>
+                <div class="footer" id="footer">
+                    <p>&copy; Copyright 2023 | Created By Kelompok_5</p>
+                </div>
+            </div>
         </div>
+
+        <!-- Script -->
+        <script src="../../asset/script/script.js"></script>
     </body>
 </html>
