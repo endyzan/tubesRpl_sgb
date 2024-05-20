@@ -166,22 +166,6 @@
                 }
             }
 
-            .footer {
-                background-color: #333;
-                color: #fff;
-                padding: 10px;
-                text-align: center;
-                margin-top: 80px;
-            }
-
-            .footer p {
-                margin: 0;
-            }
-            body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            }
             .container {
                 display: flex;
                 justify-content: space-between;
@@ -215,7 +199,7 @@
             }
             .links {
                 display: flex;
-                gap: 20px; /* Space between links */
+                gap: 20px; 
             }
             .links a {
                 text-decoration: none;
@@ -249,6 +233,18 @@
                 margin-bottom:15px;
                 width: 90%; 
                 margin-left:0;
+            }
+
+            .footer {
+                background-color: #333;
+                color: #fff;
+                padding: 10px;
+                text-align: center;
+                margin-top: 80px;
+            }
+
+            .footer p {
+                margin: 0;
             }
         </style>
     </head>
@@ -310,26 +306,26 @@
                 </div>
 
                 <div class="container">
-        <div class="section1">
-            <h2>About Us</h2>
-            <hr>
-            <div class="links">
-                <a href="profil_kami.php">PROFIL KAMI</a>
-                <a href="t&c.php">T & C</a>
-                <a href="formulirbooking.php">BOOKING TICKET</a>
-            </div>
-        </div>
-        <div class="section">
-            <h2>Follow Us</h2>
-            <hr>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/login.php"><img src="../../asset/img/fc.png" alt="Facebook"></a>
-                <a href="https://x.com/"><img src="../../asset/img/tweet.png" alt="Twitter"></a>
-                <a href="https://www.instagram.com/"><img src="../../asset/img/ig.png" alt="Instagram"></a>
-                <a href="https://www.youtube.com/"><img src="../../asset/img/youtube.png" alt="YouTube"></a>
-            </div>
-        </div>
-    </div>
+                    <div class="section1">
+                        <h2>About Us</h2>
+                        <hr>
+                        <div class="links">
+                            <a href="profil_kami.php">PROFIL KAMI</a>
+                            <a href="t&c.php">T & C</a>
+                            <a href="formulirbooking.php">BOOKING TICKET</a>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <h2>Follow Us</h2>
+                        <hr>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/login.php"><img src="../../asset/img/fc.png" alt="Facebook"></a>
+                            <a href="https://x.com/"><img src="../../asset/img/tweet.png" alt="Twitter"></a>
+                            <a href="https://www.instagram.com/"><img src="../../asset/img/ig.png" alt="Instagram"></a>
+                            <a href="https://www.youtube.com/"><img src="../../asset/img/youtube.png" alt="YouTube"></a>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="footer" id="footer">
                     <p>&copy; Copyright 2023 | Created By Kelompok_5</p>
