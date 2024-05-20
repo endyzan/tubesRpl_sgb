@@ -480,17 +480,14 @@
                 </div>
                 <div class="icon_fasilitas">
                     <div class="icon">
-                    <a href="fasilitas.php">
                         <i class="fas fa-utensils"></i>
                         <p>PUMARA</p>
                     </div>
                     <div class="icon">
-                    <a href="fasilitas.php">
                         <i class="fas fa-shopping-cart"></i>
                         <p>JAJANAN UMKM</p>
                     </div>
                     <div class="icon">
-                        <a href="fasilitas.php">
                         <i class="fas fa-mosque"></i>
                         <p>MUSHOLA</p>
                     </div>
