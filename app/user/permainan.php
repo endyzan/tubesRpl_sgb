@@ -179,6 +179,75 @@
                 }
             }
 
+            .container {
+                display: flex;
+                justify-content: space-between;
+                padding: 20px;
+                background-color: #fff;
+            }
+            .section {
+                display: flex;
+                flex-direction: column;
+                width: 20%;
+            }
+            .section1 {
+                display: flex;
+                flex-direction: column;
+                width: 40%;
+                margin-left:700px;
+                
+            }
+            .section h2 {
+                margin: 0;
+                margin-bottom: 10px;
+                font-size: 24px;
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            }
+            .section1 h2 {
+                margin: 0;
+                margin-bottom: 10px;
+                font-size: 24px;
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            
+            }
+            .links {
+                display: flex;
+                gap: 20px; 
+            }
+            .links a {
+                text-decoration: none;
+                color: #000;
+                font-weight: bold;
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            }
+            .social-icons {
+                display: flex;
+                gap: 15px;
+                align-items: center;
+            }
+            .social-icons a {
+                text-decoration: none;
+                color: #000;
+                font-size: 24px;
+            }
+            .section hr {
+                border: 0;
+                height: 3px; 
+                background: #000; 
+                margin-top: 1px;
+                margin-bottom:15px;
+                width: 100%;
+            }
+            .section1 hr {
+                border: 0;
+                height: 3px; 
+                background: #000; 
+                margin-top: 1px;
+                margin-bottom:15px;
+                width: 90%; 
+                margin-left:0;
+            }
+
             .footer {
                 background-color: #333;
                 color: #fff;
@@ -190,86 +259,12 @@
             .footer p {
                 margin: 0;
             }
-
-            body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-            background-color: #fff;
-        }
-        .section {
-            display: flex;
-            flex-direction: column;
-            width: 20%;
-        }
-        .section1 {
-            display: flex;
-            flex-direction: column;
-            width: 40%;
-            margin-left:700px;
-            
-        }
-        .section h2 {
-            margin: 0;
-            margin-bottom: 10px;
-            font-size: 24px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-        }
-        .section1 h2 {
-            margin: 0;
-            margin-bottom: 10px;
-            font-size: 24px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-        
-        }
-        .links {
-            display: flex;
-            gap: 20px; 
-        }
-        .links a {
-            text-decoration: none;
-            color: #000;
-            font-weight: bold;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-        }
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-        .social-icons a {
-            text-decoration: none;
-            color: #000;
-            font-size: 24px;
-        }
-        .section hr {
-            border: 0;
-            height: 3px; 
-            background: #000; 
-            margin-top: 1px;
-            margin-bottom:15px;
-            width: 100%;
-        }
-        .section1 hr {
-            border: 0;
-            height: 3px; 
-            background: #000; 
-            margin-top: 1px;
-            margin-bottom:15px;
-            width: 90%; 
-            margin-left:0;
-        }
         </style>
     </head>
     
     <body>
-            <!-- Header Start -->
-            <div class="header">
+        <!-- Header Start -->
+        <div class="header">
             <div class="logo">
                 <img src="../../asset/img/logoSGB.jpg" alt="LOGO SGB">
             </div>
@@ -294,7 +289,8 @@
             </div>
             <!-- Menu End -->
         </div>
-        <!-- Header Start -->
+        <!-- Header End -->
+        
         <div class="judul">
             <h1>ZONA PERMAINAN STADION GELORA BANGKALAN</h1>
         </div>
@@ -318,7 +314,7 @@
                 </div>
             </div>
             <div class="game">
-                <img src="../../asset/img/Melukis.jpg" alt="MELUKIS ANAK-ANAK">
+                <img src="../../asset/img/lukis.jpg" alt="MELUKIS ANAK-ANAK">
                 <div class="game-info">
                     <h3>MELUKIS ANAK-ANAK</h3>
                     <p><strong>Deskripsi: </strong></p>
@@ -412,27 +408,26 @@
         </div>
 
         <div class="container">
-        <div class="section1">
-            <h2>About Us</h2>
-            <hr>
-            <div class="links">
-                <a href="profil_kami.php">PROFIL KAMI</a>
-                <a href="t&c.php">T & C</a>
-                <a href="formulirbooking.php">BOOKING TICKET</a>
+            <div class="section1">
+                <h2>About Us</h2>
+                <hr>
+                <div class="links">
+                    <a href="profil_kami.php">PROFIL KAMI</a>
+                    <a href="t&c.php">T & C</a>
+                    <a href="formulirbooking.php">BOOKING TICKET</a>
+                </div>
+            </div>
+            <div class="section">
+                <h2>Follow Us</h2>
+                <hr>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/login.php"><img src="../../asset/img/fc.png" alt="Facebook"></a>
+                    <a href="https://x.com/"><img src="../../asset/img/tweet.png" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/"><img src="../../asset/img/ig.png" alt="Instagram"></a>
+                    <a href="https://www.youtube.com/"><img src="../../asset/img/youtube.png" alt="YouTube"></a>
+                </div>
             </div>
         </div>
-        <div class="section">
-            <h2>Follow Us</h2>
-            <hr>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/login.php"><img src="../../asset/img/fc.png" alt="Facebook"></a>
-                <a href="https://x.com/"><img src="../../asset/img/tweet.png" alt="Twitter"></a>
-                <a href="https://www.instagram.com/"><img src="../../asset/img/ig.png" alt="Instagram"></a>
-                <a href="https://www.youtube.com/"><img src="../../asset/img/youtube.png" alt="YouTube"></a>
-            </div>
-        </div>
-    </div>
-
 
         <div class="footer" id="footer">
             <p>&copy; Copyright 2023 | Created By Kelompok_5</p>
