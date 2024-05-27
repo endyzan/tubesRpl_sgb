@@ -1,12 +1,11 @@
 <?php
-define("BASEURL", "http://localhost/tubesRpl_sgb");
-define("BASEPATH", $_SERVER["DOCUMENT_ROOT"]."/tubesRpl_sgb");
+$host = 'localhost';
+$db = 'rplsgb';
+$user = 'root';
+$pass = '';
 
-try {
-    $db = new PDO('mysql:host=localhost;dbname=rplsgb', 'root', '', [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-    ]);
-} catch(PDOException $e) {
-    echo "Koneksi database gagal: " . $e->getMessage();
-    exit();
+$conn = new mysqli($host, $user, $pass, $db);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }

@@ -10,3 +10,13 @@ cara buka git bash:
 5. ketikkan 'git clone' lalu paste link tubesrpl dengan cara klik 'win' + 'v' 
 6. lalu 'cd tubesRpl_sgb'
 7. lalu 'code .'
+
+
+
+**Database Name: rplsgb**
+
+**Developed by val,ci,nad,ndi**
+
+**Admin Login Details**
+Email   : admin@admin.com
+Password: admin

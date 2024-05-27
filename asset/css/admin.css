@@ -86,3 +86,73 @@ form {
 .login-btn:hover {
     background-color: #0026ff;
 }
+
+
+
+/* ------------------------------main---------------------------------- */
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+} */
+.navbar {
+    width: 200px;
+    background-color: #333;
+    color: white;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    transition: width 0.3s;
+}
+.navbar a {
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    text-align: left;
+}
+.navbar a:hover {
+    background-color: #575757;
+}
+.content {
+    margin-left: 200px;
+    padding: 20px;
+    width: 100%;
+    transition: margin-left 0.3s;
+}
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+}
+#toggleNavbar, #menuButton {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+#toggleNavbar:hover, #menuButton:hover {
+    background-color: #575757;
+}
+.slider {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background-color: #333;
+    padding: 10px;
+}
+.slider a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+.slider a:hover {
+    background-color: #575757;
+}

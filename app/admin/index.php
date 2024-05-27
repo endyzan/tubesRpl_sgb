@@ -1,18 +1,31 @@
 <?php
+session_start(); // Mulai sesi
+
 require_once './../base.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
-    $result = $db->query($sql);
-    if ($result->rowCount() > 0) {
-        header("Location: beranda.php");
-        exit();
+
+    $stmt = $conn->prepare('SELECT * FROM users WHERE email = ?');
+    $stmt->bind_param('s', $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+        if ($password == $user['password']) { // In real-world application, use password_hash and password_verify
+            $_SESSION['username'] = $user['username'];
+            header('Location: dashboard.php');
+            exit();
+        } else {
+            echo "Invalid password.";
+        }
     } else {
-        $login_error = "Login gagal. Silakan coba lagi.";
+        echo "No user found.";
     }
 }
+
 ?>
 
 <!DOCTYPE html>

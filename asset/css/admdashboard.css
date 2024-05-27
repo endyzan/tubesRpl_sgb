@@ -1,0 +1,236 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #ffffff;
+    color: #fff;
+    transition: width 0.3s, margin-left 0.3s;
+    overflow-x: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background: #3760F2;
+}
+
+.sidebar-header h3 {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    /* border-bottom: 1px solid #be0202; */
+}
+
+.sidebar ul li a:hover {
+    background-color: #c3d0ff;
+}
+
+.sidebar ul li a {
+    color: #717070;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar ul li.active a {
+    color: #ffffff;
+    background-color: #3760F2;
+}
+
+#content {
+    margin-left: 230px;
+    width: calc(100% - 200px);
+    transition: margin-left 0.3s, width 0.3s;
+}
+
+.navbar {
+    background: #0B30F1;
+    padding: 27px 20px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.dropbtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.manual-list-icon {
+    display: inline-block;
+    width: 24px; /* Lebar ikon */
+    height: 24px; /* Tinggi ikon */
+    position: relative;
+}
+
+.manual-list-icon::before,
+.manual-list-icon::after,
+.manual-list-icon span {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px; /* Ketebalan garis */
+    background-color: white;
+    position: absolute;
+    left: 0;
+    border-radius: 2px; /* Membuat garis rounded */
+}
+
+.manual-list-icon::before {
+    top: 2px; /* Jarak dari atas untuk garis pertama */
+}
+
+.manual-list-icon::after {
+    top: 18px; /* Jarak dari atas untuk garis ketiga */
+}
+
+.manual-list-icon span {
+    top: 10px; /* Jarak dari atas untuk garis tengah */
+}
+
+#sidebarToggle, #sidebarToggleOutside {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#sidebarToggle {
+    margin-left: auto;
+}
+
+#sidebarToggleOutside {
+    position: fixed;
+    top: 37px;
+    color: #fff; /* Mengubah warna teks menjadi putih */
+    background: #000000;
+    padding: 10px 20px; /* Menambah padding horizontal untuk memberikan ruang */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s;
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%);
+    text-align: center; /* Untuk memusatkan teks */
+    line-height: 1.5em; /* Untuk memusatkan teks secara vertikal */
+}
+
+.hidden {
+    display: none;
+}
+
+.sidebar.hidden {
+    width: 0;
+}
+
+#content.fullwidth {
+    margin-left: 0;
+    width: 100%;
+}
+
+.main-content {
+    padding: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background: #fff;
+
+    border-radius: 4px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.info-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.info-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1 1 calc(25% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-card i {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.info-card h3 {
+    margin: 0 0 10px;
+}
+
+.details-link {
+    color: #0B30F1;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.details-link i {
+    margin-left: 5px;
+}
