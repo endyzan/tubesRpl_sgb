@@ -18,5 +18,6 @@ cara buka git bash:
 **Developed by val,ci,nad,ndi**
 
 **Admin Login Details**
-Email   : admin@admin.com
-Password: admin123
+
+- Email   : admin@admin.com
+- Password: admin123
