@@ -1,4 +1,9 @@
 # Tugas Besar RPL - Apk Wisata Stadion Gelora Bangkalan
+tampilan pada user:
+![Deskripsi Gambar](https://github.com/endyzan/tubesRpl_sgb/blob/main/1.1.png?raw=true)
+
+tampilan pada admin:
+
 
 panduan:
 1. register di github
