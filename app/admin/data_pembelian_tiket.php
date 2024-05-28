@@ -34,6 +34,6 @@ session_start();
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="../../other/admin/script.js"></script>
 </body>
 </html>

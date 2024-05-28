@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $user = $result->fetch_assoc();
         if ($password == $user['password']) { // In real-world application, use password_hash and password_verify
             $_SESSION['username'] = $user['username'];
+            $_SESSION['email'] = $user['email']; // Simpan email ke sesi
             header('Location: dashboard.php');
             exit();
         } else {
@@ -25,7 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "No user found.";
     }
 }
-
 ?>
 
 <!DOCTYPE html>
