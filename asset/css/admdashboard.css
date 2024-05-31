@@ -6,7 +6,7 @@ body {
 }
 
 #content {
-    margin-left: 230px;
+    margin-left: 290px;
     width: calc(100% - 200px);
     transition: margin-left 0.3s, width 0.3s;
 }
@@ -35,7 +35,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 7px;
+    padding: 6.6px;
     background: #3760F2;
     box-shadow: 0 5px 10px rgba(0, 0, 0.3, 0);
 }
@@ -346,11 +346,11 @@ input[type="submit"]:hover {
 
 /* main content dashboard --------------------------------------------------- */
 
-.main-content {
+/* .main-content {
     padding: 40px;
-    padding-left: 10px;
-    padding-right: 400px;
-}
+    padding-left: 50px;
+    padding-right: 200px;
+} */
 
 .main-content h2 {
     font-weight: bold;
@@ -513,3 +513,130 @@ input[type="submit"]:hover {
         width: 100%;
     }
 }
+
+
+/* filter tahun, chart dan leaderboard pada data_pengunjung.php --------------------------------------- */
+/* filter tahun */
+.filter-buttons {
+    gap: 15px;
+    margin-bottom: 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-button {
+    /* padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); 
+    */
+    border: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#btn2023 {
+    background-color: #f0d4f0;
+    color: #4b0082;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 28%; 
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#btn2024 {
+    background-color: #d1e0ff;
+    color: #0000ff;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 28%; 
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter-button:hover {
+    opacity: 0.8;
+}
+
+.icon-people-dpsatu {
+    font-size: 5em;
+    color: #830498;
+}
+.icon-people-dpdua {
+    font-size: 5em;
+    color: #0B30F1;
+}
+
+.ic-pdpsatu {
+    padding-left: 10px;
+    margin: 0;
+    color: #830498;
+    font-size: 1.5em;
+}
+.ic-pdpdua {
+    padding-left: 10px;
+    margin: 0;
+    color: #0B30F1;
+    font-size: 1.5em;
+}
+
+/* chart */
+.chart-container {
+    width: 100%; /* Atur lebar sesuai kebutuhan Anda */
+    max-width: 700px; /* Atur lebar maksimum sesuai kebutuhan Anda */
+    margin: 0 auto; /* Tengah-kan chart */
+}
+
+.chart-container canvas {
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* leaderboard */
+.leaderboard-container {
+    padding-bottom: 50px;
+    margin-top: 40px;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.leaderboard-table {
+    width: 55%;
+    border-collapse: collapse;
+    margin-top: 20px;
+
+ 
+}
+.leaderboard-table th, .leaderboard-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+.leaderboard-table th {
+    background-color: #f2f2f2;
+}
+
+.sort-button {
+    cursor: pointer;
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: #0099FF ;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+/* end ----------------------------------------------------------------- */
