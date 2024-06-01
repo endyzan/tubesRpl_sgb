@@ -29,5 +29,5 @@ cara buka git bash:
 
 **Admin Login Details**
 
-- Email   : admin@admin.com
-- Password: admin123
+- Email   : andigan@admin.com
+- Password: andi123
