@@ -1,0 +1,384 @@
+body {
+    font-family: Helvetica;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 2%;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start; /* Align items at the start of the flex container */
+    padding: 10px;
+}
+
+.curved-box {
+    background-color: rgba(255, 118, 14, 1);
+    border: 2px solid rgba(255, 118, 14, 1);
+    border-radius: 12px;
+    padding: 7px 10px;
+    box-shadow: 0 4px 8px rgba(255, 118, 14, 0.1);
+    max-width: 30%;
+    word-wrap: break-word;
+    color: rgba(255, 255, 255, 1);
+    margin-right: 20px; /* Spacing between curved box and other content */
+}
+.curved-box-ongrid {
+
+    background-color: rgba(255, 118, 14, 1);
+    border: 2px solid rgba(255, 118, 14, 1);
+    border-radius: 12px;
+    padding: 10px; /* Reduce padding for better spacing */
+    box-shadow: 0 4px 8px rgba(255, 118, 14, 0.1);
+    color: rgba(255, 255, 255, 1);
+    text-align: center; /* Center the text */
+    word-wrap: break-word;
+}
+.curved-box h1 {
+    margin-top: 0;
+}
+
+.curved-box p {
+    margin-bottom: 0;
+}
+
+.curved-box-title {
+    background-color: rgb(0, 0, 0);
+    border: 2px solid rgba(0, 0, 0, 1);
+    border-radius: 12px;
+    padding: 7px 10px;
+    box-shadow: 0 4px 8px rgba(255, 118, 14, 0.1);
+    max-width: 20%;
+    word-wrap: break-word;
+    color: rgba(255, 255, 255, 1);
+    margin: auto;
+    text-align: center;
+}
+
+.curved-box-title h1 {
+    margin-top: 0;
+}
+
+.curved-box-title p {
+    margin-bottom: 0;
+}
+.sekat {
+    background-color: rgba(0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(255, 118, 14, 0.1);
+    min-width: 90%;
+    margin: 3% 0% 1% 0%;
+    max-height: 0.01%;
+
+}
+
+button{
+    background-color: rgba(255, 118, 14, 0.8);
+    border: 2px solid rgba(255, 118, 14, 0.1);
+    border-radius: 12px;
+    padding: 7px 10px;
+    box-shadow: 0 4px 8px rgba(255, 118, 14, 0.1);
+    max-width: 100%;
+    word-wrap: break-word;
+    color: rgba(255, 255, 255, 1);
+    margin: 1px;
+    margin-top: 0.5px;
+    margin-bottom: 1px;
+}
+.orangetext {
+    color: rgba(255, 118, 14, 1); 
+    text-shadow:2px 2px 4px rgba(0, 0, 0, 0.4);
+    flex: 1;
+    padding: 10px 1px; /* Allows the content to take the remaining space */
+}
+
+.blacktext {
+    color: rgb(0, 0, 0); 
+    text-shadow:2px 2px 4px rgba(0, 0, 0, 0.4);
+    flex: 1;
+    padding: 10px 1px; /* Allows the content to take the remaining space */
+}
+
+.text-box {
+    background-color: rgba(0, 0, 0, 0.2); /* Black background with alpha 0.4 */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between; /* Distributes space between items */
+    align-items: center; /* Aligns items vertically centered */
+    max-width: 95%;
+    margin-left: 2%;
+    border-radius: 0; /* No curves */
+}
+
+.text-box .text-item {
+    color: rgba(0, 0, 0, 1); /* White text color */
+    margin: 0 10px; /* Adds margin between text items */
+    flex: 1; /* Distributes space evenly between text items */
+    text-align: center; /* Centers text within each flex item */
+}
+.text-box-white {
+    background-color: rgba(255, 255, 255, 0); /* Black background with alpha 0.4 */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between; /* Distributes space between items */
+    align-items: center; /* Aligns items vertically centered */
+    max-width: 95%;
+    margin-left: 2%;
+    border-radius: 0; /* No curves */
+}
+
+.text-box-white .text-item-white {
+    color: rgba(0, 0, 0, 1); /* White text color */
+    margin: 0 10px; /* Adds margin between text items */
+    flex: 1; /* Distributes space evenly between text items */
+    text-align: center; /* Centers text within each flex item */
+}
+.grid-container {
+    display: grid;
+    background-color: #ffffff00;
+    max-width: 20%;
+    padding: 1px;
+}
+.subgrid{
+display: grid;
+grid-template-columns: auto auto auto;
+background-color: #ffffff00;
+padding: 5px;
+}
+.grid-item {
+background-color: rgba(255, 255, 255, 0);
+padding: 5px;
+font-size: 15px;
+text-align: left;
+width: 100%;
+margin-right: 10px;
+
+}
+.grid-curved {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjusts columns automatically */
+    gap: 20px; /* Space between items */
+    padding: 10px;
+}
+  /* Tombol submit */
+/* Styles for the submit button */
+/* Container for the submit button */
+.btn-submit-container {
+    display: flex;
+    justify-content: flex-end; /* Align the submit button to the right */
+    padding: 10px 0; /* Add some padding for better spacing */
+}
+
+.btn-submit input[type="submit"] {
+    background-color: green; /* Green background color */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add padding */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Change cursor to pointer */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.btn-submit input[type="submit"]:hover {
+    background-color: darkgreen; /* Darker green on hover */
+}
+
+  /* Input dengan sudut curva */
+.grid-container [type="text"],
+.grid-container input[type="email"],
+.grid-container input[type="password"],
+.grid-container input[type="number"],
+.grid-container select,
+.grid-container textarea {
+  border-radius: 10px; /* Ubah nilai ini untuk mengubah radius curva */
+  padding: 10px; /* Ubah nilai ini untuk mengubah padding input */
+  border: 1px solid #ccc; /* Ubah warna border */
+  outline: none; /* Hilangkan garis fokus */
+  width: 500px;
+  box-sizing: border-box; /* Memastikan padding dihitung dalam lebar elemen */
+}
+input[type="number"]{
+    width: 40px;
+}
+
+/* Input dengan fokus */
+.grid-container [type="text"]:focus,
+.grid-container input[type="email"]:focus,
+.grid-container input[type="password"]:focus,
+.grid-container input[type="number"]:focus,
+.grid-container select:focus,
+.grid-container textarea:focus {
+  border: 2px solid #007bff; /* Ubah warna border saat fokus */
+}
+/* Updated Styles */
+.tombol-ticket, .tombol-permainan, #tanggal {
+    margin-left: 20px; /* Adjust the value as needed */
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 2%;
+}
+
+.containerpembayaran {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.left-box, .right-box {
+    background-color: #f0f0f0; /* Abu-abu muda */
+    border-radius: 12px;
+    padding: 20px;
+    width: 48%;
+    box-sizing: border-box;
+}
+
+.left-box .section, .right-box .section {
+    margin-bottom: 20px;
+}
+
+.left-box .section h2, .right-box .section h2 {
+    margin-top: 0;
+    color: black;
+}
+
+.left-box .section .white-box, .right-box .section .white-box {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.left-box .section .white-box input[type="radio"] {
+    margin-right: 10px;
+}
+
+.left-box .section .white-box p {
+    margin: 5px 0;
+}
+
+.kotakabuabubesar{
+    margin-top: 1em;
+    background-color: #868686; /* Abu-abu muda */
+    border-radius: 12px;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 30%;
+}
+
+.btn-submit-container {
+    text-align: right;
+}
+
+.btn-submit-container input[type="submit"] {
+    background-color: rgb(0, 128, 0); /*0, 128, 0 */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-submit-container input[type="submit"]:hover {
+    background-color: darkgreen;
+}
+
+/* Styles for the right box */
+.right-box .section .red-text {
+    color: red;
+    margin: 5px 0;
+}
+.whatsapp-logo {
+    width: 20px; /* Sesuaikan ukuran sesuai kebutuhan */
+    height: 20px; /* Sesuaikan ukuran sesuai kebutuhan */
+    vertical-align: middle; /* Vertically align with text */
+}
+.nota-container {
+    border: 1px solid #000;
+    max-width: 800px;
+    margin: auto;
+}
+.header-nota , .footer-nota {
+    background-color: #28a745;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    text-align: left;
+    margin-bottom: 20px;
+    min-height: 50px;
+}
+.judulheader{
+    font-family: 'Times New Roman';
+    font-size: 25px;
+}
+.section-title{
+    background-color: #28a745;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    text-align: left;
+    margin: 0 5% 0 5%;
+    max-width: 90%;
+}
+.content-nota {
+    padding: 10px 10px 10px 5%;
+}
+.content-nota p {
+    margin: 5px 0;
+}
+.terms {
+    margin-top: 20px;
+    padding-left: 1em;
+    margin-bottom: 5%;
+}
+.terms p {
+    margin: 5px 0;
+}
+.download-button {
+    text-align: center;
+    margin-top: 20px;
+}
+.download-button button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.download-button button:hover {
+    background-color: #218838;
+}
+@media (max-width: 600px) {
+    .text-box {
+        flex-direction: column; /* Stack items vertically on small screens */
+        text-align: center; /* Center text on small screens */
+    }
+    .text-box .text-item {
+        margin: 5px 0; /* Adjusts margin for vertical stacking */
+    }
+    .curved-box {
+        padding: 15px;
+        margin-right: 0; /* Remove margin in small screens for better layout */
+        max-width: 100%;
+    }
+
+    .container {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+    .tombol-ticket, .tombol-permainan, #tanggal {
+        margin-left: 0; /* Reset margin for small screens */
+    }
+    .grid-curved {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust column size for small screens */
+        gap: 10px; /* Reduce gap for small screens */
+    }
+}
+
