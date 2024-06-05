@@ -3,41 +3,39 @@ session_start();
 include './../base.php';
 
 // jumlah pengunjung 2023
-$monthQuery2023 = "SELECT MONTH(tanggal_pesan) as month, COUNT(*) as count FROM pemesan_tiketh WHERE YEAR(tanggal_pesan) = 2023 GROUP BY MONTH(tanggal_pesan)";
-$monthResult2023 = $conn->query($monthQuery2023);
+$monthQuery2023 = "SELECT MONTH(tanggal) as month, COUNT(*) as count FROM pemesanan_ticketh WHERE YEAR(tanggal) = 2023 GROUP BY MONTH(tanggal)";
+$monthResult2023 = $db->query($monthQuery2023);
 $months2023 = [];
-while ($row = $monthResult2023->fetch_assoc()) {
+while ($row = $monthResult2023->fetch(PDO::FETCH_ASSOC)) {
     $months2023[] = $row;
 }
 
 // jumlah pengunjung 2024
-$monthQuery2024 = "SELECT MONTH(tanggal_pesan) as month, COUNT(*) as count FROM pemesan_tiketh WHERE YEAR(tanggal_pesan) = 2024 GROUP BY MONTH(tanggal_pesan)";
-$monthResult2024 = $conn->query($monthQuery2024);
+$monthQuery2024 = "SELECT MONTH(tanggal) as month, COUNT(*) as count FROM pemesanan_ticketh WHERE YEAR(tanggal) = 2024 GROUP BY MONTH(tanggal)";
+$monthResult2024 = $db->query($monthQuery2024);
 $months2024 = [];
-while ($row = $monthResult2024->fetch_assoc()) {
+while ($row = $monthResult2024->fetch(PDO::FETCH_ASSOC)) {
     $months2024[] = $row;
 }
 
 // sebaran kota 2023
-$cityQuery2023 = "SELECT p.kota, COUNT(*) as count FROM pemesan_tiketh pt JOIN pembeli p ON pt.id_pembeli = p.id_pembeli WHERE YEAR(pt.tanggal_pesan) = 2023 GROUP BY p.kota";
-$cityResult2023 = $conn->query($cityQuery2023);
+$cityQuery2023 = "SELECT p.kota, COUNT(*) as count FROM pemesanan_ticketh pt JOIN pembeli p ON pt.id_pembeli = p.id_pembeli WHERE YEAR(pt.tanggal) = 2023 GROUP BY p.kota";
+$cityResult2023 = $db->query($cityQuery2023);
 $cities2023 = [];
-while ($row = $cityResult2023->fetch_assoc()) {
+while ($row = $cityResult2023->fetch(PDO::FETCH_ASSOC)) {
     $cities2023[] = $row;
 }
 
 // sebaran kota 2024
-$cityQuery2024 = "SELECT p.kota, COUNT(*) as count FROM pemesan_tiketh pt JOIN pembeli p ON pt.id_pembeli = p.id_pembeli WHERE YEAR(pt.tanggal_pesan) = 2024 GROUP BY p.kota";
-$cityResult2024 = $conn->query($cityQuery2024);
+$cityQuery2024 = "SELECT p.kota, COUNT(*) as count FROM pemesanan_ticketh pt JOIN pembeli p ON pt.id_pembeli = p.id_pembeli WHERE YEAR(pt.tanggal) = 2024 GROUP BY p.kota";
+$cityResult2024 = $db->query($cityQuery2024);
 $cities2024 = [];
-while ($row = $cityResult2024->fetch_assoc()) {
+while ($row = $cityResult2024->fetch(PDO::FETCH_ASSOC)) {
     $cities2024[] = $row;
 }
 
-$conn->close();
+// PDO does not have a close method like MySQLi, it closes the connection automatically when the object is destroyed.
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -138,7 +136,7 @@ $conn->close();
             // Update city chart
             const cityData = year === 2023 ? cityData2023 : cityData2024;
             const cityLabels = cityData.map(city => city.kota);
-            const cityCounts = cityData.map(city => city.count);
+            const cityCounts = cityData.map(city => city.count);    
 
             cityChart.data.labels = cityLabels;
             cityChart.data.datasets[0].data = cityCounts;
@@ -236,6 +234,7 @@ $conn->close();
             rows.forEach(row => tbody.appendChild(row));
         }
     </script>
+
 </body>
 </html>
 

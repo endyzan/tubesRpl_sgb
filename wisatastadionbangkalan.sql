@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jun 02, 2024 at 08:30 AM
+-- Host: 127.0.0.1
+-- Generation Time: Jun 05, 2024 at 06:59 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -41,17 +41,6 @@ INSERT INTO `bank` (`id_bank`, `nama_bank`, `no_rek`) VALUES
 ('01', 'BCA', 88765),
 ('02', 'JCB', 28310938),
 ('03', 'Shinhan', 1027987324);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `login`
---
-
-CREATE TABLE `login` (
-  `email` varchar(320) NOT NULL,
-  `password` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -147,16 +136,18 @@ INSERT INTO `pembeli` (`id_pembeli`, `nama_pembeli`, `email_pembeli`, `nohp_pemb
 ('74', 'andai', 'sajdah@gmail.com', '09898989123', 'ajksdhfkjdhaflksdff', 'SURABAYA'),
 ('75', 'andai', 'sajdah@gmail.com', '09898989123', 'ajksdhfkjdhaflksdff', 'SURABAYA'),
 ('76', 'andai', 'sajdah@gmail.com', '09898989123', 'ajksdhfkjdhaflksdff', 'SURABAYA'),
+('77', 'ag', 'ag@gmail.com', '081230188640', 'jl satu tujuan', 'Surabaya'),
+('78', 'guest satu', 'guestsatu@guest.com', '098123876234', 'jl guest satu', 'sidoarjo'),
 ('8', 'umar much', 'sajdah@gmail.com', '09898989123', 'asdfasfdasdf', 'SURABAYA'),
 ('9', 'umar much', 'sajdah@gmail.com', '09898989123', 'asdfasfdasdf', 'SURABAYA');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pemesanan_ticketD`
+-- Table structure for table `pemesanan_ticketd`
 --
 
-CREATE TABLE `pemesanan_ticketD` (
+CREATE TABLE `pemesanan_ticketd` (
   `kode_booking` varchar(256) NOT NULL,
   `id_permainan` varchar(256) NOT NULL,
   `jumlah` int(11) NOT NULL,
@@ -164,10 +155,10 @@ CREATE TABLE `pemesanan_ticketD` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `pemesanan_ticketD`
+-- Dumping data for table `pemesanan_ticketd`
 --
 
-INSERT INTO `pemesanan_ticketD` (`kode_booking`, `id_permainan`, `jumlah`, `subtotal`) VALUES
+INSERT INTO `pemesanan_ticketd` (`kode_booking`, `id_permainan`, `jumlah`, `subtotal`) VALUES
 ('SGB202406012807', 'FISHING01', 1, 15000),
 ('SGB2024060241048', 'FISHING01', 1, 15000),
 ('SGB2024060241048', 'ML02', 1, 15000),
@@ -224,15 +215,17 @@ INSERT INTO `pemesanan_ticketD` (`kode_booking`, `id_permainan`, `jumlah`, `subt
 ('SGB2024060244464', 'FISHING01', 1, 15000),
 ('SGB2024060244464', 'ML02', 1, 15000),
 ('SGB2024060244464', 'IB01', 1, 15000),
-('SGB2024060244464', 'MBBM01', 1, 15000);
+('SGB2024060244464', 'MBBM01', 1, 15000),
+('SGB2024060329793', 'FISHING01', 1, 15000),
+('SGB2024060423959', 'MBBM01', 2, 30000);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pemesanan_ticketH`
+-- Table structure for table `pemesanan_ticketh`
 --
 
-CREATE TABLE `pemesanan_ticketH` (
+CREATE TABLE `pemesanan_ticketh` (
   `kode_booking` varchar(256) NOT NULL,
   `tanggal` date NOT NULL,
   `id_pembeli` varchar(256) NOT NULL,
@@ -244,10 +237,10 @@ CREATE TABLE `pemesanan_ticketH` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `pemesanan_ticketH`
+-- Dumping data for table `pemesanan_ticketh`
 --
 
-INSERT INTO `pemesanan_ticketH` (`kode_booking`, `tanggal`, `id_pembeli`, `jenis`, `jumlah`, `total_tagihan`, `id_bank`, `status`) VALUES
+INSERT INTO `pemesanan_ticketh` (`kode_booking`, `tanggal`, `id_pembeli`, `jenis`, `jumlah`, `total_tagihan`, `id_bank`, `status`) VALUES
 ('SGB2024053192818', '2024-06-01', '9', 'Ticket_Masuk', 1, 5000, '01', '0'),
 ('SGB202406012807', '2024-06-01', '60', 'Ticket_Masuk', 1, 20000, '01', '1'),
 ('SGB202406014169', '2024-06-01', '59', 'Ticket_Masuk', 1, 5000, '01', '1'),
@@ -266,7 +259,9 @@ INSERT INTO `pemesanan_ticketH` (`kode_booking`, `tanggal`, `id_pembeli`, `jenis
 ('SGB2024060259021', '2024-06-02', '70', 'Ticket_Masuk', 1, 65000, '01', '0'),
 ('SGB2024060260606', '2024-06-02', '69', 'Ticket_Masuk', 1, 65000, '01', '0'),
 ('SGB2024060272991', '2024-06-03', '62', 'Ticket_Masuk', 1, 5000, '01', '0'),
-('SGB2024060281463', '2024-06-02', '75', 'Ticket_Masuk', 1, 65000, '01', '0');
+('SGB2024060281463', '2024-06-02', '75', 'Ticket_Masuk', 1, 65000, '01', '0'),
+('SGB2024060329793', '2024-06-03', '77', 'Ticket_Masuk', 1, 20000, '01', '0'),
+('SGB2024060423959', '2024-07-01', '78', 'Ticket_Masuk', 1, 35000, '01', '1');
 
 -- --------------------------------------------------------
 
@@ -311,6 +306,26 @@ CREATE TABLE `ticket_masuk` (
 INSERT INTO `ticket_masuk` (`jenis`, `harga`) VALUES
 ('Ticket_Masuk', 5000);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
+(1, 'andi', 'andigan@admin.com', 'andi123');
+
 --
 -- Indexes for dumped tables
 --
@@ -328,16 +343,16 @@ ALTER TABLE `pembeli`
   ADD PRIMARY KEY (`id_pembeli`);
 
 --
--- Indexes for table `pemesanan_ticketD`
+-- Indexes for table `pemesanan_ticketd`
 --
-ALTER TABLE `pemesanan_ticketD`
+ALTER TABLE `pemesanan_ticketd`
   ADD KEY `kode_booking` (`kode_booking`,`id_permainan`),
   ADD KEY `id_permainan` (`id_permainan`);
 
 --
--- Indexes for table `pemesanan_ticketH`
+-- Indexes for table `pemesanan_ticketh`
 --
-ALTER TABLE `pemesanan_ticketH`
+ALTER TABLE `pemesanan_ticketh`
   ADD PRIMARY KEY (`kode_booking`),
   ADD KEY `id_pembeli` (`id_pembeli`,`jenis`,`id_bank`),
   ADD KEY `jenis` (`jenis`),
@@ -356,20 +371,37 @@ ALTER TABLE `ticket_masuk`
   ADD PRIMARY KEY (`jenis`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `pemesanan_ticketD`
+-- Constraints for table `pemesanan_ticketd`
 --
-ALTER TABLE `pemesanan_ticketD`
-  ADD CONSTRAINT `pemesanan_ticketd_ibfk_1` FOREIGN KEY (`kode_booking`) REFERENCES `pemesanan_ticketH` (`kode_booking`) ON DELETE CASCADE ON UPDATE CASCADE,
+ALTER TABLE `pemesanan_ticketd`
+  ADD CONSTRAINT `pemesanan_ticketd_ibfk_1` FOREIGN KEY (`kode_booking`) REFERENCES `pemesanan_ticketh` (`kode_booking`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `pemesanan_ticketd_ibfk_2` FOREIGN KEY (`id_permainan`) REFERENCES `permainan` (`id_permainan`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `pemesanan_ticketH`
+-- Constraints for table `pemesanan_ticketh`
 --
-ALTER TABLE `pemesanan_ticketH`
+ALTER TABLE `pemesanan_ticketh`
   ADD CONSTRAINT `pemesanan_ticketh_ibfk_1` FOREIGN KEY (`id_pembeli`) REFERENCES `pembeli` (`id_pembeli`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `pemesanan_ticketh_ibfk_2` FOREIGN KEY (`jenis`) REFERENCES `ticket_masuk` (`jenis`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `pemesanan_ticketh_ibfk_3` FOREIGN KEY (`id_bank`) REFERENCES `bank` (`id_bank`) ON DELETE CASCADE ON UPDATE CASCADE;

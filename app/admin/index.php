@@ -7,13 +7,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare('SELECT * FROM users WHERE email = ?');
-    $stmt->bind_param('s', $email);
+    $stmt = $db->prepare('SELECT * FROM users WHERE email = :email');
+    $stmt->bindParam(':email', $email);
     $stmt->execute();
-    $result = $stmt->get_result();
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
+    if ($user) {
         if ($password == $user['password']) { // In real-world application, use password_hash and password_verify
             $_SESSION['username'] = $user['username'];
             $_SESSION['email'] = $user['email']; // Simpan email ke sesi
@@ -27,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
