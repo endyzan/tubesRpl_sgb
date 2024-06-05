@@ -15,6 +15,17 @@ body {
     display: flex;
 }
 
+.main-content {
+    text-align: center;
+}
+
+.main-content h2 {
+    font-weight: bold;
+    font-size: 35px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
 
 /* sidebar ------------------------------------------------------------------ */
 .sidebar {
@@ -88,6 +99,11 @@ body {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: flex-end;
+
+    /* position: fixed; */
+    /* top: 0; */
+    /* width: 100%; */
+    /* z-index: 999; */
 }
 
 .navbar-right {
@@ -345,18 +361,34 @@ input[type="submit"]:hover {
 
 
 /* main content dashboard --------------------------------------------------- */
-
-/* .main-content {
-    padding: 40px;
-    padding-left: 50px;
-    padding-right: 200px;
-} */
-
-.main-content h2 {
+.wrapper-dsh {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-bottom: 80px;
+}
+.main-content-dsh {
+    text-align: center;
+}
+.main-content-dsh h2{
     font-weight: bold;
     font-size: 35px;
+    padding-top: 60px;
     padding-bottom: 30px;
-    padding-left: 140px;
+    text-align: center;
+    display: inline-block;
+    margin-left: -500px; 
+
+}
+
+@media (min-width: 1920px) {
+    .main-content-dsh h2 {
+        max-width: 1920px;
+        margin: 0 auto;
+        margin-left: -900px;
+
+    }
 }
 
 .info-cards {
@@ -364,6 +396,13 @@ input[type="submit"]:hover {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+}
+
+@media (min-width: 1366px) {
+    .info-cards {
+        max-width: 1366px;
+        gap: 30px;
+    }
 }
 
 .icbg-dp {
@@ -595,13 +634,20 @@ input[type="submit"]:hover {
 /* chart */
 .chart-container {
     width: 100%; /* Atur lebar sesuai kebutuhan Anda */
-    max-width: 700px; /* Atur lebar maksimum sesuai kebutuhan Anda */
+    max-width: 1000px; /* Atur lebar maksimum sesuai kebutuhan Anda */
     margin: 0 auto; /* Tengah-kan chart */
 }
 
 .chart-container canvas {
     width: 100% !important;
     height: auto !important;
+}
+
+@media (min-width: 1366px) {
+    .chart-container {
+        max-width: 1366px;
+        width: 65%;
+    }
 }
 
 /* leaderboard */
@@ -639,4 +685,265 @@ input[type="submit"]:hover {
     border-radius: 4px;
 }
 
-/* end ----------------------------------------------------------------- */
+/* end ---------------------------------------------------------------------------- */
+
+
+/* data pembelian tiket -------------------------------------------------------------- */
+
+.wrapper-dpt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    margin: 0;
+}
+
+.main-content-dpt {
+    text-align: center;
+}
+
+
+.main-content-dpt h2 {
+    font-weight: bold;
+    font-size: 35px;
+    padding-top: 50px;
+}
+
+.table-container {
+    display: inline-block; 
+    text-align: left; 
+    margin-top: 20px;
+    padding-bottom: 50px;
+}
+
+@media (min-width: 1366px) {
+    .table-container {
+        max-width: 1366px;
+        margin: 0 auto;
+        width: 80%;
+        padding-top: 20px;
+    }
+}
+
+#tbl-dpt {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+#tbl-dpt,td, th {
+text-align: center;
+}
+
+#tbl-dpt td, #tbl-dpt th {
+border: 1px solid #000000;
+padding: 6px;
+padding-left: 15px;
+padding-right: 15px;
+}
+
+/* #tbl-dpt tr:nth-child(even){background-color: #f2f2f2;}
+
+#tbl-dpt tr:hover {background-color: #ddd;} */
+
+#tbl-dpt th {
+padding-top: 12px;
+padding-bottom: 12px;
+color: rgb(0, 0, 0);
+}
+
+.btn-primary {
+    cursor: pointer;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: #2299fc;
+    border: 1px solid #2299fc;
+    border-radius: 3px;
+    color: #ffffff;
+}
+.not-allowed-cursor {
+    cursor: not-allowed;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: #77c2ff;
+    border: 1px solid #77c2ff;
+    border-radius: 3px;
+    color: #ffffff;
+}
+
+
+/* end -------------------------------------------------------------------------------- */
+
+
+/* filter dan chart pada laporan_pendapatan.php -------------------------------------------- */
+/* tombol filter */
+.main-content-lp {
+    text-align: center;
+    padding-bottom: 70px;
+    font-weight: bold;
+    font-size: 23px;
+    padding-top: 51px;
+    padding-bottom: 60px;
+}
+
+.filter-buttonslp {
+    gap: 15px;
+    padding-top: 30px;
+    margin-bottom: 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-buttonlp {
+    border: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#filterYearBtn {
+    background-color: #f0d4f0;
+    color: #4b0082;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 28%; 
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#sortMonthBtn {
+    background-color: #d1e0ff;
+    color: #0000ff;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 28%; 
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter-buttonlp:hover {
+    opacity: 0.8;
+}
+
+.icon-lpsatu {
+    font-size: 5em;
+    color: #830498;
+}
+.icon-lpdua {
+    font-size: 5em;
+    color: #0B30F1;
+}
+
+.ic-lpsatu {
+    padding-left: 10px;
+    margin: 0;
+    color: #830498;
+    font-size: 1.5em;
+}
+.ic-lpdua {
+    padding-left: 10px;
+    margin: 0;
+    color: #0B30F1;
+    font-size: 1.5em;
+}
+
+/* popup filter */
+.popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.popup-content button {
+    margin: 5px;
+}
+
+/* end ------------------------------------------------------------------------------ */
+
+/* harga tiket ---------------------------------------------------------------------- */
+.wrapper-ht {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    margin: 0;
+}
+
+#wahana-ht, #waktu-bermain-ht {
+    text-align: left;
+}
+
+.main-content-ht {
+    text-align: center;
+}
+
+.main-content-ht h2 {
+    font-weight: bold;
+    font-size: 35px;
+    padding-top: 50px;
+}
+.main-content-ht h3 {
+    font-weight: bold;
+    font-size: 25px;
+    padding-top: 20px;
+    text-align: center;
+    display: inline-block;
+    margin-left: -270px; /* Sesuaikan nilai ini */
+}
+
+#tbl-ht {
+    border-collapse: collapse;
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+
+#tbl-ht,td, th {
+text-align: center;
+}
+
+#tbl-ht td, #tbl-ht th {
+border: 1px solid #000000;
+padding: 6px;
+padding-left: 15px;
+padding-right: 15px;
+}
+
+/* #tbl-ht tr:nth-child(even){background-color: #f2f2f2;}
+
+#tbl-ht tr:hover {background-color: #ddd;} */
+
+#tbl-ht th {
+padding-top: 12px;
+padding-bottom: 12px;
+color: rgb(0, 0, 0);
+}
+
+.btn-warning {
+    cursor: pointer;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: #fda528;
+    border: 1px solid #fda528;
+    border-radius: 3px;
+    color: #ffffff;
+}
+
+/* end ------------------------------------------------------------------------- */

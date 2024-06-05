@@ -27,32 +27,10 @@ while ($row = $yearResult->fetch(PDO::FETCH_ASSOC)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - Laporan Pendapatan</title>
-    <link rel="stylesheet" href="../../asset/css/admdashboard.css">
+    <link rel="stylesheet" href="../../asset/css/admdashboard.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        /* Tambahkan gaya untuk pop-up */
-        .popup {
-            display: none;
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-        }
-        .popup-content {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .popup-content button {
-            margin: 5px;
-        }
-    </style>
+   
 </head>
 <body>
     <div class="wrapper">
@@ -67,15 +45,21 @@ while ($row = $yearResult->fetch(PDO::FETCH_ASSOC)) {
         <div id="content">
             <?php include './template/navbar.php'; ?>
 
-            <div class="main-content">
+            <div class="main-content-lp">
                 <h2>Laporan Pendapatan</h2>
                 
-                <div class="filter-buttons">
-                    <button id="filterYearBtn" class="filter-button" onclick="showYearPopup()">
-                        <i class="bi bi-calendar"></i> Laporan Pendapatan per Bulan
+                <div class="filter-buttonslp">
+                    <button id="filterYearBtn" class="filter-buttonlp" onclick="showYearPopup()">
+                        <i class="bi bi-cash-stack icon-lpsatu"></i> 
+                        <div class="ic-lpsatu">
+                            <h3>Laporan Pendapatan per Bulan</h3>
+                        </div>
                     </button>
                     <button id="sortMonthBtn" class="filter-button" onclick="showSortPopup()">
-                        <i class="bi bi-sort-alpha-down"></i> Urutkan Pendapatan per Bulan
+                        <i class="bi bi-filter-circle icon-lpdua"></i>
+                        <div class="ic-lpdua">
+                            <h3>Urutkan Pendapatan per Bulan</h3>
+                        </div>
                     </button>
                 </div>
 
@@ -127,9 +111,9 @@ while ($row = $yearResult->fetch(PDO::FETCH_ASSOC)) {
         const monthlyDatasets = Object.keys(monthlyChartData).map(year => ({
             label: `Pendapatan Bulanan ${year}`,
             data: monthlyChartData[year],
-            backgroundColor: 'rgba(75, 192, 192, 0.6)',
-            borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 1
+            backgroundColor: 'rgba(32, 0, 250, 0.8)',
+            borderColor: 'rgba(32, 0, 250, 1)',
+            borderWidth: 2
         }));
 
         const monthlyChart = new Chart(document.getElementById('monthlyChart').getContext('2d'), {
@@ -151,7 +135,7 @@ while ($row = $yearResult->fetch(PDO::FETCH_ASSOC)) {
                 plugins: {
                     title: {
                         display: true,
-                        text: 'Pendapatan Bulanan'
+                        text: 'Pendapatan Bulanan Tahun ini'
                     }
                 }
             }
@@ -164,8 +148,8 @@ while ($row = $yearResult->fetch(PDO::FETCH_ASSOC)) {
                 datasets: [{
                     label: 'Pendapatan Tahunan',
                     data: yearlyData.map(d => d.total),
-                    backgroundColor: 'rgba(153, 102, 255, 0.6)',
-                    borderColor: 'rgba(153, 102, 255, 1)',
+                    backgroundColor: 'rgba(32, 0, 250, 0.8)',
+                    borderColor: 'rgba(32, 0, 250, 1)',
                     borderWidth: 1
                 }]
             },
@@ -210,8 +194,8 @@ while ($row = $yearResult->fetch(PDO::FETCH_ASSOC)) {
             monthlyChart.data.datasets = [{
                 label: `Pendapatan Bulanan ${year}`,
                 data: monthCounts,
-                backgroundColor: 'rgba(75, 192, 192, 0.6)',
-                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(32, 0, 250, 0.8)',
+                borderColor: 'rgba(32, 0, 250, 1)',
                 borderWidth: 1
             }];
             monthlyChart.options.plugins.title.text = `Pendapatan Bulanan ${year}`;

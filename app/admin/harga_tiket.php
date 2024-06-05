@@ -25,7 +25,7 @@ function formatRupiah($number) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper-ht">
         <?php include './template/sidebar.php'; ?>
 
         <!-- Button to hide sidebar -->
@@ -40,38 +40,43 @@ function formatRupiah($number) {
             <?php include './template/navbar.php'; ?>
 
             <!-- Main Content -->
-            <div class="main-content">
+            <div class="main-content-ht">
                 <h2>Harga Tiket</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nomor</th>
-                            <th>Wahana</th>
-                            <th>Harga</th>
-                            <th>Waktu Bermain</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php 
-                        $nomor = 1;
-                        foreach ($permainan as $row) { 
-                        ?>
-                        <tr>
-                            <td><?php echo $nomor++; ?></td>
-                            <td><?php echo $row['nama_permainan']; ?></td>
-                            <td><?php echo formatRupiah($row['harga']); ?></td>
-                            <td><?php echo $row['durasi'] . " Menit"; ?></td>
-                            <td>
-                                <form method="GET" action="edit_permainan.php">
-                                    <input type="hidden" name="id_permainan" value="<?php echo $row['id_permainan']; ?>">
-                                    <button type="submit" class="btn btn-warning">EDIT</button>
-                                </form>
-                            </td>
-                        </tr>
-                        <?php } ?>
-                    </tbody>
-                </table>
+                <h3>Harga Tiket Masuk : IDR 5.000,00</h3>
+
+                <div class="table-container-ht">
+
+                    <table id="tbl-ht">
+                        <thead>
+                            <tr>
+                                <th>Nomor</th>
+                                <th>Wahana</th>
+                                <th>Harga</th>
+                                <th>Waktu Bermain</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php 
+                            $nomor = 1;
+                            foreach ($permainan as $row) { 
+                            ?>
+                            <tr>
+                                <td><?php echo $nomor++; ?></td>
+                                <td id="wahana-ht"><?php echo $row['nama_permainan']; ?></td>
+                                <td><?php echo formatRupiah($row['harga']); ?></td>
+                                <td id="waktu-bermain-ht"><?php echo $row['durasi'] . " Menit"; ?></td>
+                                <td>
+                                    <form method="GET" action="edit_permainan.php">
+                                        <input type="hidden" name="id_permainan" value="<?php echo $row['id_permainan']; ?>">
+                                        <button type="submit" class="btn btn-warning">EDIT</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

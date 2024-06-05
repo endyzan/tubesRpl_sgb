@@ -16,7 +16,7 @@ if (!isset($_SESSION['username'])) {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
     </head>
     <body>
-        <div class="wrapper">
+        <div class="wrapper-dsh">
             <?php include './template/sidebar.php'; ?>
 
         <!-- Button to hide sidebar -->
@@ -31,7 +31,7 @@ if (!isset($_SESSION['username'])) {
             <?php include './template/navbar.php'; ?>
 
             <!-- Main Content -->
-            <div class="main-content">
+            <div class="main-content-dsh">
                 <h2>Selamat Datang <?php echo htmlspecialchars($_SESSION['username']); ?></h2>
                 <div class="info-cards">
                     <!-- <div class="info-card"> -->
