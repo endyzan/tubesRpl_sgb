@@ -81,8 +81,8 @@ if (isset($_POST['download_pdf'])) {
                 padding: 10px 1px; /* Allows the content to take the remaining space */
             }
         </style>
-
     </head>
+    
     <body>
         <div class="nota-container">
             <div class="header-nota"><div class="judulheader">Stadion Gelora<br> Bangkalan</div></div>
