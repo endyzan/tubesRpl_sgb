@@ -8,7 +8,6 @@
             $status->execute();
             $status = $status->fetchAll(PDO::FETCH_ASSOC);
 
-
             echo '<body>
             <!-- Header Start -->
             <div class="header">
@@ -99,6 +98,4 @@
     catch(PDOException $err){
         echo "Connecting Failed" . $err->getMessage();
     }
-
-
 ?>
