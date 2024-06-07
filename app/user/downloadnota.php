@@ -132,5 +132,6 @@ if (isset($_POST['download_pdf'])) {
     $dompdf->render();
     $dompdf->stream("nota_ticket.pdf", ["Attachment" => 1]);
     exit;
+    
 }
 ?>
