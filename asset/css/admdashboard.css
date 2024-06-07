@@ -323,7 +323,7 @@ input[type="submit"]:hover {
     border: none;
     color: #fff;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 18px;    
 }
 
 #sidebarToggle {
@@ -337,7 +337,6 @@ input[type="submit"]:hover {
     color: #fff; /* Mengubah warna teks menjadi putih */
     background: #000000;
     padding: 10px 25px; /* Menambah padding horizontal untuk memberikan ruang */
-    /* box-shadow: 0 9px 5px rgba(0, 0, 0.9, 0.2); */
     transition: left 0.3s;
     clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%);
     text-align: center; /* Untuk memusatkan teks */
@@ -363,7 +362,6 @@ input[type="submit"]:hover {
 /* main content dashboard --------------------------------------------------- */
 .wrapper-dsh {
     display: flex;
-    justify-content: center;
     align-items: center;
     margin: 0;
     margin-bottom: 80px;
@@ -378,7 +376,7 @@ input[type="submit"]:hover {
     padding-bottom: 30px;
     text-align: center;
     display: inline-block;
-    margin-left: -500px; 
+    margin-left: -600px; 
 
 }
 
@@ -402,6 +400,7 @@ input[type="submit"]:hover {
     .info-cards {
         max-width: 1366px;
         gap: 30px;
+
     }
 }
 
@@ -456,11 +455,6 @@ input[type="submit"]:hover {
     flex-direction: column;
     justify-content: space-between;
     transition: transform 0.3s;
-}
-
-
-.info-card:hover {
-    transform: translateY(-5px); /* Efek hover */
 }
 
 .info-card-header {
@@ -540,19 +534,7 @@ input[type="submit"]:hover {
     font-weight: bold;
 }
 
-/* Media query untuk penyesuaian tampilan pada layar lebih kecil */
-@media (max-width: 768px) {
-    .info-card {
-        width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .info-card {
-        width: 100%;
-    }
-}
-
+/* end --------------------------------------------------------------- */
 
 /* filter tahun, chart dan leaderboard pada data_pengunjung.php --------------------------------------- */
 /* filter tahun */
@@ -565,13 +547,6 @@ input[type="submit"]:hover {
 }
 
 .filter-button {
-    /* padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    color: white;
-    font-size: 16px;
-    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); 
-    */
     border: none;
     display: flex;
     align-items: center;
@@ -692,7 +667,7 @@ input[type="submit"]:hover {
 
 .wrapper-dpt {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     /* height: 100vh; */
     margin: 0;
@@ -881,7 +856,7 @@ color: rgb(0, 0, 0);
 /* harga tiket ---------------------------------------------------------------------- */
 .wrapper-ht {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     /* height: 100vh; */
     margin: 0;

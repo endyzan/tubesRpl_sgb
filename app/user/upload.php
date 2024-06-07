@@ -31,12 +31,13 @@ if (isset($_POST['submit'])) {
             try {
                 // Pengaturan server
                 $mail->isSMTP();
-                $mail->Host       = 'smtp.gmail.com';             // Gunakan SMTP Gmail
-                $mail->SMTPAuth   = true;
-                $mail->Username   = 'pemrogramandesktopteam@gmail.com';       // Ganti dengan email Anda
-                $mail->Password   = 'spmw bqmy kqfo yowq';        // Ganti dengan password email Anda
+                $mail->Host = 'smtp.gmail.com';
+                $mail->SMTPAuth = true;
+                $mail->Username = 'pemrogramandesktopteam@gmail.com';
+                $mail->Password = 'spmw bqmy kqfo yowq'; // Pastikan ini adalah password aplikasi, bukan password email
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-                $mail->Port       = 587;
+                $mail->Port = 587;
+
 
                 // Penerima
                 $mail->setFrom('pemrogramandesktopteam@gmail.com', 'Betadata03');

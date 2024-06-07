@@ -94,6 +94,7 @@ while ($row = $yearResult->fetch(PDO::FETCH_ASSOC)) {
         </div>
     </div>
 
+    <script src="../../other/admin/script.js"></script>
     <script>
         const monthlyData = <?php echo json_encode($monthlyData); ?>;
         const yearlyData = <?php echo json_encode($yearlyData); ?>;
