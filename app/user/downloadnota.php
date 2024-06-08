@@ -80,9 +80,26 @@ if (isset($_POST['download_pdf'])) {
                 flex: 1;
                 padding: 10px 1px; /* Allows the content to take the remaining space */
             }
+            .text-box-white {
+                background-color: rgba(255, 255, 255, 0); /* Black background with alpha 0.4 */
+                padding: 10px;
+                display: flex;
+                justify-content: space-between; /* Distributes space between items */
+                align-items: center; /* Aligns items vertically centered */
+                max-width: 95%;
+                margin-left: 2%;
+                border-radius: 0; /* No curves */
+            }
+
+            .text-box-white .text-item-white {
+                color: rgba(0, 0, 0, 1); /* White text color */
+                margin: 0 10px; /* Adds margin between text items */
+                flex: 1; /* Distributes space evenly between text items */
+                text-align: center; /* Centers text within each flex item */
+            }
         </style>
+
     </head>
-    
     <body>
         <div class="nota-container">
             <div class="header-nota"><div class="judulheader">Stadion Gelora<br> Bangkalan</div></div>
@@ -100,9 +117,82 @@ if (isset($_POST['download_pdf'])) {
                 <p>Kode Booking: <?php echo htmlspecialchars($tiket['kode_booking']); ?></p>
                 <p>Tanggal: <?php echo htmlspecialchars($tiket['tanggal']); ?></p>
                 <p>Jumlah: <?php echo htmlspecialchars($tiket['jumlah']); ?></p>
-                <p>Status: <?php echo htmlspecialchars($tiket['status']); ?></p>
+                <p>Status: <?php 
+                if (htmlspecialchars($tiket['status']) == 1){
+                    echo "Sudah Terbayar";
+                }
+                else{
+                    echo "Belum Dibayar";
+                }
+                 ?></p>
             </div>
+            <?php
+                $cekpermainan = $db->prepare("SELECT EXISTS( SELECT * FROM pemesanan_ticketD WHERE kode_booking = '{$_SESSION['kodebooking']}')");
+                $cekpermainan->execute();
+                $cekpermainan= $cekpermainan->fetch(PDO::FETCH_COLUMN);
 
+                if($cekpermainan==1){
+                    echo'<div class="section-title"><div class="blacktext">Informasi Ticket Permainan</div></div>';
+                    $totalpembelian = 0;
+                    $daftarpermainan = $db->prepare("SELECT * from permainan");
+                    $daftarpermainan->execute();
+                    $daftarpermainan = $daftarpermainan->fetchAll(PDO::FETCH_ASSOC);
+
+                    $permainan = array();
+
+                    foreach ($daftarpermainan as $mainan){
+                        $permainan[$mainan["id_permainan"]] = array(
+                            "nama_permainan"=>$mainan["nama_permainan"],
+                            "durasi"=>$mainan["durasi"],
+                            "harga"=>$mainan["harga"]
+                        );
+                    }
+                    $iter = 0;
+
+                    $permainanpembeli = $db->prepare("SELECT * from pemesanan_ticketD where kode_booking = '{$_SESSION['kodebooking']}'");
+                    $permainanpembeli->execute();
+                    $permainanpembeli = $permainanpembeli->fetchAll(PDO::FETCH_ASSOC);
+                    echo '<div class="content-nota">';
+                    echo "<table>";
+                    for ($i=0;$i<count($permainanpembeli);$i++){
+                    
+                    foreach ($permainanpembeli[$i] as $key => $val){
+                        // var_dump($key,$val);
+                        // string(12) "kode_booking" string(17) "SGB2024060225074A" string(12) "id_permainan" string(9) "FISHING01" string(6) "jumlah" int(1) string(8) "subtotal" int(15000)
+
+                        if (array_key_exists($val,$permainan)){
+                            if ($iter == 0){
+                                echo '
+                                <thead>
+                                <tr>
+                                    <td>PERMAINAN</td>
+                                    <td>HARGA</td>
+                                    <td>MENIT</td>
+                                    <td>JUMLAH</td>
+                                    <td>SUB TOTAL</td>
+                                </tr>
+                                </thead>';
+                            }
+                            $iter += 1;
+                            echo "<tbody>
+                                    <tr>
+                                        <td>{$permainan[$val]['nama_permainan']}&nbsp;</td>
+                                        <td>{$permainan[$val]['harga']}&nbsp;&nbsp;</td>
+                                        <td>{$permainan[$val]['durasi']}&nbsp;&nbsp;</td>
+                                        <td>{$permainanpembeli[$i]['jumlah']}&nbsp;&nbsp;</td>
+                                        <td>".($permainan[$val]['harga']*$permainanpembeli[$i]['jumlah'])."</td>
+                                    </tr>
+                                </tbody>";
+                            $totalpembelian += $permainan[$val]["harga"]*$permainanpembeli[$i]['jumlah'];
+                        }
+                        else{
+                            // var_dump("MASUK FALSE");
+                        }
+                    }}
+                    echo "</table>";
+                    echo '</div>';
+                }
+            ?>
             <div class="terms">
                 <p><b>Syarat dan Ketentuan:</b></p>
                 <p>1. Termasuk tiket Stadion Gelora Bangkalan</p>
