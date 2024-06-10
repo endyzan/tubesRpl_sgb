@@ -314,7 +314,7 @@
                 </div>
             </div>
             <div class="game">
-                <img src="../../asset/img/lukis.jpg" alt="MELUKIS ANAK-ANAK">
+                <img src="../../asset/img/Melukis.jpg" alt="MELUKIS ANAK-ANAK">
                 <div class="game-info">
                     <h3>MELUKIS ANAK-ANAK</h3>
                     <p><strong>Deskripsi: </strong></p>
@@ -402,7 +402,7 @@
 
 
         <div class="sticky-whatsapp">
-            <a href="https://wa.me/+62 878-5305-3661" target="_blank">
+            <a href="https://wa.me/+6287853053661" target="_blank">
                 <img src="../../asset/img/logo_WA.png" alt="WhatsApp" class="whatsapp-logo">
             </a>
         </div>
