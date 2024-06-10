@@ -336,7 +336,7 @@
             <div class="facility">
                 <img src="../../asset/img/pumara.jpg" alt="PUMARA">
                 <div class="facility-info">
-                    <h3>PUMARA</h3>
+                    <h3 id="pumara">PUMARA</h3>
                     <p>PUMARA adalah Pusat Makanan Rakyat yang buka dari sore hingga malam hari dan ramainya Pumara ini biasa terjadi pada malam hari ketika sebagian besar orang-orang lepas dari rutinitas sehari-hari dan mencari makanan di luar rumah.</p>
                     <p>Makanan yang dijajakan adalah Khas Pedagang kaki lima seperti Nasi Goreng, Mie Goreng, Sea Food, Sate Madura, Soto, Tempe Penyet, dan lain sebagainya juga minuman yang tersedia yakni Teh, Jeruk, Kopi dan lainnya yang bisa dipilih sesuai dengan keinginan TreTan.</p>
                 </div>
@@ -345,7 +345,7 @@
             <div class="facility">
                 <img src="../../asset/img/jajanan.jpg" alt="Jajanan UMKM">
                 <div class="facility-info">
-                    <h3>JAJANAN UMKM</h3>
+                    <h3 id="jajanan_umkm">JAJANAN UMKM</h3>
                     <p>Jajanan UMKM di Stadion Gelora Bangkalan menawarkan berbagai pilihan makanan dan minuman lokal yang lezat dan beragam. Para pedagang UMKM menyediakan camilan seperti tahu tek, rujak cingur, bakso, pentol, telur gulung, waffle, cilok, dll. Ada juga pilihan minuman segar seperti es dawet, es campur, es degan, dll. Selain itu, tersedia makanan berat seperti nasi goreng, sate, mie ayam, rawon, bubur ayam, dll. Para pengunjung dapat menikmati cita rasa khas Madura dan menikmati suasana stadion dengan jajanan yang disajikan oleh para pelaku UMKM.</p>
                 </div>
             </div>
@@ -353,14 +353,14 @@
             <div class="facility">
                 <img src="../../asset/img/mushola.jpg" alt="Mushola">
                 <div class="facility-info">
-                    <h3>MUSHOLA</h3>
+                    <h3 id="mushola">MUSHOLA</h3>
                     <p>Musholla Stadion Gelora Bangkalan ini berada di Pumara. Musholla ini menyediakan fasilitas ibadah bagi pengunjung dan atlet. Terdapat area wudhu, lengkap dengan fasilitas air bersih. Musholla ini memberikan kemudahan bagi para pengunjung yang ingin menunaikan ibadah di stadion.</p>
                 </div>
             </div>
         </main>
 
         <div class="sticky-whatsapp">
-            <a href="https://wa.me/+62 878-5305-3661" target="_blank">
+            <a href="https://wa.me/+6287853053661" target="_blank">
                 <img src="../../asset/img/logo_WA.png" alt="WhatsApp" class="whatsapp-logo">
             </a>
         </div>
