@@ -1,10 +1,14 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cetak Ticket</title>
-    <link rel="stylesheet" href="../../asset/css/styles.css"> <!-- Link ke file CSS eksternal -->
+    <link rel="stylesheet" href="../../asset/css/styles.css"> <!--Link ke file CSS eksternal-->
     <style>
         * {
             margin: 0;
@@ -19,6 +23,8 @@
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 120px; /* Sesuaikan dengan tinggi header */
+            padding-bottom: 60px; /* Sesuaikan dengan tinggi footer jika diperlukan */
         }
 
         /* ---------------------------------Header Start--------------------------------- */
@@ -27,11 +33,12 @@
             justify-content: space-between;
             align-items: center;
             background: white;
-            position: absolute;
+            position: fixed; /* Ganti dari absolute ke fixed */
             top: 0;
             left: 0;
             right: 0;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            z-index: 1000; /* Tambahkan z-index untuk memastikan header berada di atas elemen lainnya */
         }
         .logo {
             display: flex;
@@ -39,7 +46,7 @@
             height: 120px;
         }
         /* ---------------------------------Header End--------------------------------- */
-        
+
         /* ---------------------------------Menu Start--------------------------------- */
         .menu ul {
             list-style: none;
@@ -70,7 +77,7 @@
             position: left;
         }
 
-        .menu ul li ul li a{
+        .menu ul li ul li a {
             font-size: 0.8rem;
             padding: 10px 20px;
             position: left;
@@ -110,104 +117,109 @@
         /* ---------------------------------Menu End--------------------------------- */
 
         .sticky-whatsapp2 {
-                position: fixed;
-                bottom: 60px;
-                right: 0px;
-                z-index: 100;
-            }
+            position: fixed;
+            bottom: 60px;
+            right: 0px;
+            z-index: 100;
+        }
 
+        .sticky-whatsapp2 img {
+            width: 80px;
+            height: 50px;
+        }
+
+        @media (max-width: 768px) {
             .sticky-whatsapp2 img {
-                width: 80px;
-                height: 50px;
+                width: 20px;
+                height: 20px;
             }
+        }
 
-            @media (max-width: 768px) {
-                .sticky-whatsapp2 img {
-                    width: 20px;
-                    height: 20px;
-                }
-            }
-
-            .container2 {
-                display: flex;
-                justify-content: space-between;
-                padding: 20px;
-                background-color: #fff;
-            }
-            .section {
-                display: flex;
-                flex-direction: column;
-                width: 20%;
-            }
-            .section1 {
-                display: flex;
-                flex-direction: column;
-                width: 40%;
-                margin-left:700px;
-                
-            }
-            .section h2 {
-                margin: 0;
-                margin-bottom: 10px;
-                font-size: 24px;
-                text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-            }
-            .section1 h2 {
-                margin: 0;
-                margin-bottom: 10px;
-                font-size: 24px;
-                text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        .container2 {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #fff;
+        }
+        .section {
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+        }
+        .section1 {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            margin-left: 700px;
             
-            }
-            .links {
-                display: flex;
-                gap: 20px; 
-            }
-            .links a {
-                text-decoration: none;
-                color: #000;
-                font-weight: bold;
-                text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-            }
-            .social-icons {
-                display: flex;
-                gap: 15px;
-                align-items: center;
-            }
-            .social-icons a {
-                text-decoration: none;
-                color: #000;
-                font-size: 24px;
-            }
-            .section hr {
-                border: 0;
-                height: 3px; 
-                background: #000; 
-                margin-top: 1px;
-                margin-bottom:15px;
-                width: 100%;
-            }
-            .section1 hr {
-                border: 0;
-                height: 3px; 
-                background: #000; 
-                margin-top: 1px;
-                margin-bottom:15px;
-                width: 90%; 
-                margin-left:0;
-            }
+        }
+        .section h2 {
+            margin: 0;
+            margin-bottom: 10px;
+            font-size: 24px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        .section1 h2 {
+            margin: 0;
+            margin-bottom: 10px;
+            font-size: 24px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            
+        }
+        .links {
+            display: flex;
+            gap: 20px; 
+        }
+        .links a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .social-icons a {
+            text-decoration: none;
+            color: #000;
+            font-size: 24px;
+        }
+        .section hr {
+            border: 0;
+            height: 3px; 
+            background: #000; 
+            margin-top: 1px;
+            margin-bottom: 15px;
+            width: 100%;
+        }
+        .section1 hr {
+            border: 0;
+            height: 3px; 
+            background: #000; 
+            margin-top: 1px;
+            margin-bottom: 15px;
+            width: 90%; 
+            margin-left: 0;
+        }
 
-            .footer2 {
-                background-color: #333;
-                color: #fff;
-                padding: 10px;
-                text-align: center;
-                margin-top: 80px;
-            }
+        .footer2 {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            margin-top: 80px;
+            position: fixed; /* Ganti dari absolute ke fixed */
+            bottom: 0;
+            width: 100%;
+            z-index: 1000; /* Tambahkan z-index untuk memastikan footer berada di atas elemen lainnya */
+        }
 
-            .footer2 p {
-                margin: 0;
-            }
+        .footer2 p {
+            margin: 0;
+        }
+
     </style>
 </head>
 <body>
@@ -240,13 +252,54 @@
     <!-- Header Start -->
 
     <div class = 'isi'>
-        <div class='kotakabuabubesar'>
+        <div class='kotakabuabubesar' style="padding-top: 20px;">
             <form action="cektiketmasuk.php" method="POST">
                 <label for='kodebook'>Kode Booking :</label>
                 <input type="text" name='kodebook' id='kodebook' required>
-                <input type="submit" name='cekkodebook' id='cekkodebook' value="CEK">
+                <div class='btn-submit-container'><input type="submit" name='cekkodebook' id='cekkodebook' value="CEK"></div>
             </form>
         </div>
+    
+
+        <?php
+        
+        if (isset($_POST['cekkodebook'])){
+            try{
+                require_once "../base.php";
+                
+                $cek = $db->prepare("SELECT EXISTS(SELECT 1 FROM pemesanan_ticketH WHERE kode_booking = '{$_POST['kodebook']}')");
+                $cek->execute();
+                $cek = $cek ->fetchColumn();
+
+                echo "<div class='kotakabuabubesar'>";
+                if($cek){
+                    $status = $db->prepare("SELECT status FROM pemesanan_ticketH WHERE kode_booking = '{$_POST['kodebook']}'");
+                    $status->execute();
+                    $status = $status ->fetchColumn();
+                    if($status=="1"){
+                        $_SESSION['kodebooking'] = $_POST['kodebook'];
+                        echo "<form action='nota.php' method='POST'>
+                            <div class='btn-submit-container'><input type='submit' value='Download Nota' name='viewnota'></div>
+                        </form>
+                        <form action='pesanpermainan.php' method='POST'>
+                            <div class='btn-submit-container'><input type='submit' value='Pesan Permainan' name='pesanpermainan'></div>
+                        </form>";
+                    }
+                    else{
+                        echo "<div class='blacktext'>Ticket Tersebut Belum Terbayarkan</div>";
+                    }
+                }
+                else{
+                    echo "<div class='blacktext'>Maaf Kode Booking Tersebut Tidak Ditemukan</div>";
+                }
+                echo"</div>";
+
+            }
+            catch(PDOException $err){
+                echo "Connect Fail".$err->getMessage();
+            }
+        }
+        ?>
     </div>
 
     <div class="sticky-whatsapp2">
@@ -254,6 +307,7 @@
             <img src="../../asset/img/logo_WA.png" alt="WhatsApp" class="whatsapp-logo">
         </a>
     </div>
+
 
     <div class="container2">
         <div class="section1">
@@ -281,45 +335,4 @@
         <p>&copy; Copyright 2023 | Created By Kelompok_5</p>
     </div>
 </body>
-<?php
-    session_start();
-    if (isset($_POST['cekkodebook'])){
-        try{
-            require_once "../base.php";
-            
-            $cek = $db->prepare("SELECT EXISTS(SELECT 1 FROM pemesanan_ticketH WHERE kode_booking = '{$_POST['kodebook']}')");
-            $cek->execute();
-            $cek = $cek ->fetchColumn();
-
-            echo "<div class='kotakabuabubesar'>";
-            if($cek){
-                $status = $db->prepare("SELECT status FROM pemesanan_ticketH WHERE kode_booking = '{$_POST['kodebook']}'");
-                $status->execute();
-                $status = $status ->fetchColumn();
-                if($status=="1"){
-                    $_SESSION['kodebooking'] = $_POST['kodebook'];
-                    echo "<form action='nota.php' method='POST'>
-                        <div class='btn-submit-container'><input type='submit' value='Download Nota' name='viewnota'></div>
-                    </form>
-                    <form action='pesanpermainan.php' method='POST'>
-                        <div class='btn-submit-container'><input type='submit' value='Pesan Permainan' name='pesanpermainan'></div>
-                    </form>";
-                }
-                else{
-                    echo "<div class='blacktext'>Ticket Tersebut Belum Terbayarkan</div>";
-                }
-            }
-            else{
-                echo "<div class='blacktext'>Maaf Kode Booking Tersebut Tidak Ditemukan</div>";
-            }
-            echo"</div>";
-
-        }
-        catch(PDOException $err){
-            echo "Connect Fail".$err->getMessage();
-        }
-    }
-
-
-
-?>
+</html>
