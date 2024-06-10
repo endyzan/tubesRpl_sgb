@@ -273,6 +273,9 @@
                 width: 60%;
                 margin: 0 auto;
             }
+            .icon_fasilitas a {
+                color: black;
+            }
             .icon {
                 text-align: center;
                 font-size: 4rem;
@@ -479,18 +482,24 @@
                     <p> THE BEST FACILITIES FOR THE BEST EXPERIENCE </p>
                 </div>
                 <div class="icon_fasilitas">
-                    <div class="icon">
-                        <i class="fas fa-utensils"></i>
-                        <p>PUMARA</p>
-                    </div>
-                    <div class="icon">
-                        <i class="fas fa-shopping-cart"></i>
-                        <p>JAJANAN UMKM</p>
-                    </div>
-                    <div class="icon">
-                        <i class="fas fa-mosque"></i>
-                        <p>MUSHOLA</p>
-                    </div>
+                    <a href="fasilitas.php#pumara">
+                        <div class="icon">
+                            <i class="fas fa-utensils"></i>
+                            <p>PUMARA</p>
+                        </div>
+                    </a>
+                    <a href="fasilitas.php#jajanan_umkm">
+                        <div class="icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p>JAJANAN UMKM</p>
+                        </div>
+                    </a>
+                    <a href="fasilitas.php#mushola">
+                        <div class="icon">
+                            <i class="fas fa-mosque"></i>
+                            <p>MUSHOLA</p>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="judul_ContactUs" id="ContactUs">
@@ -532,7 +541,7 @@
                 </div>
 
                 <div class="sticky-whatsapp">
-                    <a href="https://wa.me/+62 878-5305-3661" target="_blank">
+                    <a href="https://wa.me/+6287853053661" target="_blank">
                         <img src="../../asset/img/logo_WA.png" alt="WhatsApp" class="whatsapp-logo">
                     </a>
                 </div>
