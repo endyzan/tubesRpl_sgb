@@ -1,233 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Nota Ticket</title>
-    <link rel="stylesheet" href="../../asset/css/styles.css"> <!-- Link ke file CSS eksternal -->
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            outline: none;
-            border: none;
-            text-decoration: none;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+<link rel="stylesheet" href="../../asset/css/styles.css"> <!-- Link ke file CSS eksternal -->
+<?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+session_start();
+require __DIR__ . '/vendor/autoload.php'; // Menggunakan autoloader dari Composer
 
-        /* ---------------------------------Header Start--------------------------------- */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: white;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-        }
-        .logo {
-            display: flex;
-            width: 120px;
-            height: 120px;
-        }
-        /* ---------------------------------Header End--------------------------------- */
-        
-        /* ---------------------------------Menu Start--------------------------------- */
-        .menu ul {
-            list-style: none;
-        }
-        .menu ul li {
-            position: relative;
-            float: left;
-        }
-        .menu ul li a {
-            color: black;
-            font-size: 1.3rem;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-            Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-            display: block;
-            padding: 27px;
-            font-weight: bold;
-        }
-        .menu ul li ul {
-            position: absolute;
-            background: #D3D3D3;
-            display: none;
-            width: max-content;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-        }
-
-        .menu ul li ul li {
-            border-top: 1px solid rgba(207, 205, 205, 0.384);
-            position: left;
-        }
-
-        .menu ul li ul li a{
-            font-size: 0.8rem;
-            padding: 10px 20px;
-            position: left;
-        }
-        .menu ul li ul li:not(:last-child)::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: black;
-        }
-        .menu ul li:hover > ul {
-            display: flex;
-            flex-direction: column;
-        }
-        .menu a:hover {
-            color: red;
-        }
-        .menu a::after {
-            content: "";
-            border-bottom: 0.1rem solid black;
-            display: block;
-            padding-bottom: 0.5rem;
-            transform: scaleX(0);
-        }
-        .menu a:hover::after {
-            transform: scaleX(1.0);
-            transition: 0.2s linear;
-        }
-
-        .pembuka img {
-            width: 100%;
-            margin-top: 170px;
-        }
-        /* ---------------------------------Menu End--------------------------------- */
-
-        .sticky-whatsapp2 {
-                position: fixed;
-                bottom: 60px;
-                right: 0px;
-                z-index: 100;
-            }
-
-            .sticky-whatsapp2 img {
-                width: 80px;
-                height: 50px;
-            }
-
-            @media (max-width: 768px) {
-                .sticky-whatsapp2 img {
-                    width: 20px;
-                    height: 20px;
-                }
-            }
-
-            .container2 {
-                display: flex;
-                justify-content: space-between;
-                padding: 20px;
-                background-color: #fff;
-            }
-            .section {
-                display: flex;
-                flex-direction: column;
-                width: 20%;
-            }
-            .section1 {
-                display: flex;
-                flex-direction: column;
-                width: 40%;
-                margin-left:700px;
-                
-            }
-            .section h2 {
-                margin: 0;
-                margin-bottom: 10px;
-                font-size: 24px;
-                text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-            }
-            .section1 h2 {
-                margin: 0;
-                margin-bottom: 10px;
-                font-size: 24px;
-                text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-            
-            }
-            .links {
-                display: flex;
-                gap: 20px; 
-            }
-            .links a {
-                text-decoration: none;
-                color: #000;
-                font-weight: bold;
-                text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-            }
-            .social-icons {
-                display: flex;
-                gap: 15px;
-                align-items: center;
-            }
-            .social-icons a {
-                text-decoration: none;
-                color: #000;
-                font-size: 24px;
-            }
-            .section hr {
-                border: 0;
-                height: 3px; 
-                background: #000; 
-                margin-top: 1px;
-                margin-bottom:15px;
-                width: 100%;
-            }
-            .section1 hr {
-                border: 0;
-                height: 3px; 
-                background: #000; 
-                margin-top: 1px;
-                margin-bottom:15px;
-                width: 90%; 
-                margin-left:0;
-            }
-
-            .footer2 {
-                background-color: #333;
-                color: #fff;
-                padding: 10px;
-                text-align: center;
-                margin-top: 80px;
-            }
-
-            .footer2 p {
-                margin: 0;
-            }
-    </style>
-</head>
-<body>
-    <?php
-    session_start();
-    try {
-        require_once "../base.php";
-
-        // Query untuk mendapatkan data pembeli dan tiket
-        $pembeliQuery = $db->prepare("SELECT p.nama_pembeli, p.kota, p.nohp_pembeli, p.email_pembeli FROM pembeli p,pemesanan_ticketH WHERE p.id_pembeli = pemesanan_ticketH.id_pembeli  and pemesanan_ticketH.kode_booking = '{$_SESSION['kodebooking']}'");
-        $pembeliQuery->execute();
-        $pembeli = $pembeliQuery->fetch(PDO::FETCH_ASSOC);
-        $tiketQuery = $db->prepare("SELECT * FROM pemesanan_ticketH WHERE kode_booking = '{$_SESSION['kodebooking']}'");
-        $tiketQuery->execute();
-        $tiket = $tiketQuery->fetch(PDO::FETCH_ASSOC);
-
-    } catch (PDOException $err) {
-        echo "Connection Failed: " . $err->getMessage();
+if (isset($_POST['submit'])) {
+    $target_dir = "uploads/";
+    if (!is_dir($target_dir)) {
+        mkdir($target_dir, 0777, true); // Membuat direktori 'uploads' jika belum ada
     }
-    ?>
+    $target_file = $target_dir . basename($_FILES["image"]["name"]);
+    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
+    // Periksa apakah file adalah gambar
+    $check = getimagesize($_FILES["image"]["tmp_name"]);
+    echo '
     <!-- Header Start -->
     <div class="header">
         <div class="logo">
@@ -254,55 +42,66 @@
         </div>
         <!-- Menu End -->
     </div>
-    <!-- Header Start -->
+    <!-- Header Start -->';
 
-    <div class = 'isi'>
-        <div class="nota-container">
-            <div class="header-nota"><div class="judulheader">Stadion Gelora<br> Bangkalan</div></div>
-
-            <div class="section-title"><div class="blacktext">Personal Information</div></div>
-            <div class="content-nota">
-                <p>Nama: <?php echo htmlspecialchars($pembeli['nama_pembeli']); ?></p>
-                <p>Kota: <?php echo htmlspecialchars($pembeli['kota']); ?></p>
-                <p>NoHp: <?php echo htmlspecialchars($pembeli['nohp_pembeli']); ?></p>
-                <p>Email: <?php echo htmlspecialchars($pembeli['email_pembeli']); ?></p>
-            </div>
-
-            <div class="section-title"><div class="blacktext">Informasi Ticket Masuk</div></div>
-            <div class="content-nota">
-                <p>Kode Booking: <?php echo htmlspecialchars($tiket['kode_booking']); ?></p>
-                <p>Tanggal: <?php echo htmlspecialchars($tiket['tanggal']); ?></p>
-                <p>Jumlah: <?php echo htmlspecialchars($tiket['jumlah']); ?></p>
-                <p>Status: <?php echo htmlspecialchars($tiket['status']); ?></p>
-            </div>
-
-            <div class="terms">
-                <p><b>Syarat dan Ketentuan:</b></p>
-                <p>1. Termasuk tiket Stadion Gelora Bangkalan</p>
-                <p>2. Tiket Berlaku sesuai tanggal kunjungan yang telah dipilih</p>
-                <p>3. Tiket berlaku di semua hari, weekday dan weekend</p>
-                <p>4. Tiket yang dibeli bersifat tetap.</p>
-                <p>5. Tiket hanya dapat digunakan sampai batas waktu yang telah ditentukan</p>
-                <p>6. Pengunjung tidak dapat memperpanjang masa berlaku tiket</p>
-                <p>7. Tiket hanya berlaku untuk satu kali kunjungan</p>
-                <p>8. Tiket tidak dapat dibatalkan atau refund</p>
-                <p>9. Tiket tidak dapat di reschedule</p>
-            </div>
-
-            <div class="footer-nota">
-                Stadion Gelora Bangkalan<br>
-                Jl. Soekarno Hatta, Wr 08, Mlajah, Bangkalan, Kabupaten Bangkalan, Jawa Timur 69116 Indonesia
-            </div>
-        </div>
-
+    echo "<div class = 'isi'>";
+        echo "<div class='curved-box-title'>KONFIRMASI PEMBAYARAN</div>
+        <div class='kotakabuabubesar'>
+            <div class='left-box'>";
         
-            <form method="post" action="downloadnota.php">
-                <div class='btn-submit-container'><button type="submit" name="download_pdf">Download PDF</button></div>
-            </form>
-    </div>
+        if($check !== false) {
+            echo "<div class='blacktext'>Tunggu Waktu Konfirmasi Pembayaran<br><br> Max 24jam atau  <img src='https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png' alt='WhatsApp' class='whatsapp-logo'> <a href='https://wa.me/6281235304501'>Hubungi Admin</a> </div>";
 
+            // Unggah file
+            if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+
+
+                // Kirim email dengan lampiran menggunakan PHPMailer
+                $mail = new PHPMailer(true);
+                try {
+                    // Pengaturan server
+                    $mail->isSMTP();
+                    $mail->Host       = 'smtp.gmail.com';             // Gunakan SMTP Gmail
+                    $mail->SMTPAuth   = true;
+                    $mail->Username   = 'pemrogramandesktopteam@gmail.com';       // Ganti dengan email Anda
+                    $mail->Password   = 'spmw bqmy kqfo yowq';        // Ganti dengan password email Anda
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                    $mail->Port       = 587;
+
+                    // Penerima
+                    $mail->setFrom('pemrogramandesktopteam@gmail.com', 'Betadata03');
+                    $mail->addAddress('220411100097@student.trunojoyo.ac.id', 'Betadata'); // Email tujuan
+
+                    // Lampiran
+                    $mail->addAttachment($target_file);
+
+                    // Konten email
+                    $mail->isHTML(true);
+                    $mail->Subject = 'Bukti Pembayaran';
+                    $mail->Body    = "Kode Booking : {$_POST['kodebooking']}";
+
+                    $mail->send();
+
+                } catch (Exception $e) {
+                    echo "<div class='blacktext'>Email tidak dapat dikirim.</div> Error: {$mail->ErrorInfo}";
+                }
+            } else {
+                echo "<div class='blacktext'>Maaf, terjadi kesalahan saat mengunggah file Anda.</div>";
+            }
+        } else {
+            echo "<div class='blacktext'>File bukan gambar.</div>";
+        }
+        echo '
+            </div>
+            <form action="statuspembayaran.php" method="POST">
+            <div class="btn-submit-container"><input type="submit" value="Cek Status Pembayaran" name="cekstatus"></div>
+            </form>
+        </div>
+    </div>';
+
+    echo '
     <div class="sticky-whatsapp2">
-        <a href="https://wa.me/+62 878-5305-3661" target="_blank">
+        <a href="https://wa.me/+6287853053661" target="_blank">
             <img src="../../asset/img/logo_WA.png" alt="WhatsApp" class="whatsapp-logo">
         </a>
     </div>
@@ -331,6 +130,6 @@
 
     <div class="footer2" id="footer">
         <p>&copy; Copyright 2023 | Created By Kelompok_5</p>
-    </div>
-</body>
-</html>
+    </div>';
+}
+?>
