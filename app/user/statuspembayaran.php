@@ -7,8 +7,7 @@
             $status = $db->prepare("SELECT status from pemesanan_ticketH where kode_booking = '{$_SESSION['kodebooking']}'");
             $status->execute();
             $status = $status->fetchAll(PDO::FETCH_ASSOC);
-
-            echo '<body>
+            echo '
             <!-- Header Start -->
             <div class="header">
                 <div class="logo">
@@ -37,9 +36,8 @@
             </div>
             <!-- Header Start -->';
 
-            echo "
-            </div class = 'isi'>
-                <div class='curved-box-title'>KONFIRMASI PEMBAYARAN</div>
+            echo "<div class = 'isi'>";
+                echo "<div class='curved-box-title'>KONFIRMASI PEMBAYARAN</div>
                         <div class='kotakabuabubesar'>
                             <div class='left-box'>";
                 if ($status[0]["status"]=="1"){
@@ -55,12 +53,12 @@
             </form>';
                 }
                 echo "</div>
-                </div>
-            </div>";
+                </div>";
+            echo "</div>";
 
             echo '
             <div class="sticky-whatsapp2">
-                <a href="https://wa.me/+62 878-5305-3661" target="_blank">
+                <a href="https://wa.me/+6287853053661" target="_blank">
                     <img src="../../asset/img/logo_WA.png" alt="WhatsApp" class="whatsapp-logo">
                 </a>
             </div>
@@ -90,12 +88,11 @@
             <div class="footer2" id="footer">
                 <p>&copy; Copyright 2023 | Created By Kelompok_5</p>
             </div>';
-
-            echo '
-            </body>';
         }
     }
     catch(PDOException $err){
         echo "Connecting Failed" . $err->getMessage();
     }
+
+
 ?>
