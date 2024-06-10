@@ -129,7 +129,7 @@ body {
 .section {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 20%;
 }
 .section1 {
     display: flex;
@@ -153,7 +153,7 @@ body {
 }
 .links {
     display: flex;
-    gap: 20px; 
+    gap: 20px; /* Space between links */
 }
 .links a {
     text-decoration: none;
