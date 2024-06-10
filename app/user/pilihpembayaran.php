@@ -44,8 +44,8 @@
             <!-- Menu End -->
         </div>
         <!-- Header Start -->
-
-        </div class = "isi">
+        
+        <div class = "isi">
             <div class="curved-box-title">TICKET BOOKING</div>';
             echo "
                     <div class='orangetext'> Kode Booking Anda :</div>
@@ -207,47 +207,44 @@
                         <p>Note : Screenshot Dan Simpan Nomor Invoice Anda
                     </div>
                 </div>
+        </div>
+    </div>";
+
+    echo '
+    <div class="sticky-whatsapp2">
+        <a href="https://wa.me/+6287853053661" target="_blank">
+            <img src="../../asset/img/logo_WA.png" alt="WhatsApp" class="whatsapp-logo">
+        </a>
+    </div>
+
+    <div class="container2">
+        <div class="section1">
+            <h2>About Us</h2>
+            <hr>
+            <div class="links">
+                <a href="profil_kami.php">PROFIL KAMI</a>
+                <a href="t&c.php">T & C</a>
+                <a href="formulirbooking.php">BOOKING TICKET</a>
             </div>
-        </div>";
+        </div>
+        <div class="section">
+            <h2>Follow Us</h2>
+            <hr>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/login.php"><img src="../../asset/img/fc.png" alt="Facebook"></a>
+                <a href="https://x.com/"><img src="../../asset/img/tweet.png" alt="Twitter"></a>
+                <a href="https://www.instagram.com/"><img src="../../asset/img/ig.png" alt="Instagram"></a>
+                <a href="https://www.youtube.com/"><img src="../../asset/img/youtube.png" alt="YouTube"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer2" id="footer">
+        <p>&copy; Copyright 2023 | Created By Kelompok_5</p>
+    </div>';
 
         echo '
-        <div class="sticky-whatsapp2">
-            <a href="https://wa.me/+62 878-5305-3661" target="_blank">
-                <img src="../../asset/img/logo_WA.png" alt="WhatsApp" class="whatsapp-logo">
-            </a>
-        </div>
-
-        <div class="container2">
-            <div class="section1">
-                <h2>About Us</h2>
-                <hr>
-                <div class="links">
-                    <a href="profil_kami.php">PROFIL KAMI</a>
-                    <a href="t&c.php">T & C</a>
-                    <a href="formulirbooking.php">BOOKING TICKET</a>
-                </div>
-            </div>
-            <div class="section">
-                <h2>Follow Us</h2>
-                <hr>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/login.php"><img src="../../asset/img/fc.png" alt="Facebook"></a>
-                    <a href="https://x.com/"><img src="../../asset/img/tweet.png" alt="Twitter"></a>
-                    <a href="https://www.instagram.com/"><img src="../../asset/img/ig.png" alt="Instagram"></a>
-                    <a href="https://www.youtube.com/"><img src="../../asset/img/youtube.png" alt="YouTube"></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer2" id="footer">
-            <p>&copy; Copyright 2023 | Created By Kelompok_5</p>
-        </div>';
-
-
-            echo '
         </body>';
-    
-
 
     }
     catch(PDOException $err){
