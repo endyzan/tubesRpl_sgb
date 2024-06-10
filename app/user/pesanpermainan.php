@@ -1,3 +1,8 @@
+<?php
+   session_start();     
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -110,104 +115,104 @@
         /* ---------------------------------Menu End--------------------------------- */
 
         .sticky-whatsapp2 {
-                position: fixed;
-                bottom: 60px;
-                right: 0px;
-                z-index: 100;
-            }
+            position: fixed;
+            bottom: 60px;
+            right: 0px;
+            z-index: 100;
+        }
 
+        .sticky-whatsapp2 img {
+            width: 80px;
+            height: 50px;
+        }
+
+        @media (max-width: 768px) {
             .sticky-whatsapp2 img {
-                width: 80px;
-                height: 50px;
+                width: 20px;
+                height: 20px;
             }
+        }
 
-            @media (max-width: 768px) {
-                .sticky-whatsapp2 img {
-                    width: 20px;
-                    height: 20px;
-                }
-            }
-
-            .container2 {
-                display: flex;
-                justify-content: space-between;
-                padding: 20px;
-                background-color: #fff;
-            }
-            .section {
-                display: flex;
-                flex-direction: column;
-                width: 20%;
-            }
-            .section1 {
-                display: flex;
-                flex-direction: column;
-                width: 40%;
-                margin-left:700px;
-                
-            }
-            .section h2 {
-                margin: 0;
-                margin-bottom: 10px;
-                font-size: 24px;
-                text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-            }
-            .section1 h2 {
-                margin: 0;
-                margin-bottom: 10px;
-                font-size: 24px;
-                text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        .container2 {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #fff;
+        }
+        .section {
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+        }
+        .section1 {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            margin-left:700px;
             
-            }
-            .links {
-                display: flex;
-                gap: 20px; 
-            }
-            .links a {
-                text-decoration: none;
-                color: #000;
-                font-weight: bold;
-                text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-            }
-            .social-icons {
-                display: flex;
-                gap: 15px;
-                align-items: center;
-            }
-            .social-icons a {
-                text-decoration: none;
-                color: #000;
-                font-size: 24px;
-            }
-            .section hr {
-                border: 0;
-                height: 3px; 
-                background: #000; 
-                margin-top: 1px;
-                margin-bottom:15px;
-                width: 100%;
-            }
-            .section1 hr {
-                border: 0;
-                height: 3px; 
-                background: #000; 
-                margin-top: 1px;
-                margin-bottom:15px;
-                width: 90%; 
-                margin-left:0;
-            }
+        }
+        .section h2 {
+            margin: 0;
+            margin-bottom: 10px;
+            font-size: 24px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        .section1 h2 {
+            margin: 0;
+            margin-bottom: 10px;
+            font-size: 24px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        
+        }
+        .links {
+            display: flex;
+            gap: 20px; 
+        }
+        .links a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .social-icons a {
+            text-decoration: none;
+            color: #000;
+            font-size: 24px;
+        }
+        .section hr {
+            border: 0;
+            height: 3px; 
+            background: #000; 
+            margin-top: 1px;
+            margin-bottom:15px;
+            width: 100%;
+        }
+        .section1 hr {
+            border: 0;
+            height: 3px; 
+            background: #000; 
+            margin-top: 1px;
+            margin-bottom:15px;
+            width: 90%; 
+            margin-left:0;
+        }
 
-            .footer2 {
-                background-color: #333;
-                color: #fff;
-                padding: 10px;
-                text-align: center;
-                margin-top: 80px;
-            }
+        .footer2 {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            margin-top: 80px;
+        }
 
-            .footer2 p {
-                margin: 0;
-            }
+        .footer2 p {
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -243,7 +248,7 @@
         <div class="curved-box-title">PEMESANAN TIKET PERMAINAN</div>
         
         <?php
-        session_start();
+        
         try {
             require_once "../base.php";
 
@@ -308,6 +313,98 @@
                 <div class="btn-submit"><input type="submit" id="pesan" name="pesan" value="PESAN"></div>
             </div>
         </form>
+
+        <script>
+            let totalKeseluruhan = 0;
+            let permainanDiklik = false;
+
+            document.querySelectorAll('.tombol-permainan').forEach(item => {
+                item.addEventListener('click', event => {
+                    event.preventDefault();
+                    const id = item.getAttribute('data-id');
+                    const harga = parseInt(item.getAttribute('data-harga'));
+                    const durasi = item.getAttribute('data-durasi');
+                    const jenis = item.textContent;
+
+                    if (!permainanDiklik) {
+                        const headerDiv = document.createElement('div');
+                        headerDiv.innerHTML = `
+                            <div class="text-box-white">
+                                <div class="text-item-white">PERMAINAN</div>
+                                <div class="text-item-white">HARGA</div>
+                                <div class="text-item-white">MENIT</div>
+                                <div class="text-item-white">JUMLAH</div>
+                                <div class="text-item-white">SUB TOTAL</div>
+                                <div class="text-item-white"></div>
+                            </div>
+                        `;
+                        document.getElementById('detail-permainan').appendChild(headerDiv);
+                        permainanDiklik = true;
+                    }
+
+                    if (!document.getElementById(`permainan-${id}`)) {
+                        const div = document.createElement('div');
+                        div.id = `permainan-${id}`;
+                        div.innerHTML = `
+                            <div class="text-box">
+                                <div class="text-item">${jenis}</div>
+                                <div class="text-item">${harga}</div>
+                                <div class="text-item">${durasi} menit</div>
+                                <button type="button" class="btn-minus-permainan" data-id="${id}" data-harga="${harga}">-</button>
+                                <div class="text-item"><input type="number" name="${id}" id="${id}" value="1" min="1" readonly></div>
+                                <button type="button" class="btn-plus-permainan" data-id="${id}" data-harga="${harga}">+</button>
+                                <div class="text-item"><span id="subtotal_${id}">${harga}</span></div>
+                                <div class="text-item"><button type="button" class="hapus-permainan" data-id="${id}">Hapus</button></div>
+                            </div>
+                        `;
+                        document.getElementById('detail-permainan').appendChild(div);
+
+                        totalKeseluruhan += harga;
+                        document.getElementById('total-keseluruhan').textContent = totalKeseluruhan.toLocaleString('id-ID');
+
+                        document.querySelector(`#permainan-${id} .btn-plus-permainan`).addEventListener('click', (event) => {
+                            event.preventDefault();
+                            let jumlah = parseInt(document.getElementById(id).value);
+                            jumlah++;
+                            document.getElementById(id).value = jumlah;
+                            const subtotal = harga * jumlah;
+                            document.getElementById(`subtotal_${id}`).textContent = subtotal;
+                            totalKeseluruhan += harga;
+                            document.getElementById('total-keseluruhan').textContent = totalKeseluruhan.toLocaleString('id-ID');
+                        });
+
+                        document.querySelector(`#permainan-${id} .btn-minus-permainan`).addEventListener('click', (event) => {
+                            event.preventDefault();
+                            let jumlah = parseInt(document.getElementById(id).value);
+                            if (jumlah > 1) {
+                                jumlah--;
+                                document.getElementById(id).value = jumlah;
+                                const subtotal = harga * jumlah;
+                                document.getElementById(`subtotal_${id}`).textContent = subtotal;
+                                totalKeseluruhan -= harga;
+                                document.getElementById('total-keseluruhan').textContent = totalKeseluruhan.toLocaleString('id-ID');
+                            }
+                        });
+
+                        document.querySelector(`#permainan-${id} .hapus-permainan`).addEventListener('click', (event) => {
+                            event.preventDefault();
+                            const subtotal = parseInt(document.getElementById(`subtotal_${id}`).textContent);
+                            totalKeseluruhan -= subtotal;
+                            document.getElementById('total-keseluruhan').textContent = totalKeseluruhan.toLocaleString('id-ID');
+                            document.getElementById(`permainan-${id}`).remove();
+                        });
+                    }
+                });
+            });
+
+            // Form validation to ensure at least one ticket is selected
+            document.getElementById('booking-form').addEventListener('submit', function(event) {
+                if (!document.querySelector('#detail-permainan > div')) {
+                    event.preventDefault();
+                    alert('Anda harus memesan setidaknya satu tiket permainan .');
+                }
+            });
+        </script>
     </div>
 
     <div class="sticky-whatsapp2">
@@ -341,97 +438,5 @@
     <div class="footer2" id="footer">
         <p>&copy; Copyright 2023 | Created By Kelompok_5</p>
     </div>
-
-    <script>
-        let totalKeseluruhan = 0;
-        let permainanDiklik = false;
-
-        document.querySelectorAll('.tombol-permainan').forEach(item => {
-            item.addEventListener('click', event => {
-                event.preventDefault();
-                const id = item.getAttribute('data-id');
-                const harga = parseInt(item.getAttribute('data-harga'));
-                const durasi = item.getAttribute('data-durasi');
-                const jenis = item.textContent;
-
-                if (!permainanDiklik) {
-                    const headerDiv = document.createElement('div');
-                    headerDiv.innerHTML = `
-                        <div class="text-box-white">
-                            <div class="text-item-white">PERMAINAN</div>
-                            <div class="text-item-white">HARGA</div>
-                            <div class="text-item-white">MENIT</div>
-                            <div class="text-item-white">JUMLAH</div>
-                            <div class="text-item-white">SUB TOTAL</div>
-                            <div class="text-item-white"></div>
-                        </div>
-                    `;
-                    document.getElementById('detail-permainan').appendChild(headerDiv);
-                    permainanDiklik = true;
-                }
-
-                if (!document.getElementById(`permainan-${id}`)) {
-                    const div = document.createElement('div');
-                    div.id = `permainan-${id}`;
-                    div.innerHTML = `
-                        <div class="text-box">
-                            <div class="text-item">${jenis}</div>
-                            <div class="text-item">${harga}</div>
-                            <div class="text-item">${durasi} menit</div>
-                            <button type="button" class="btn-minus-permainan" data-id="${id}" data-harga="${harga}">-</button>
-                            <div class="text-item"><input type="number" name="${id}" id="${id}" value="1" min="1" readonly></div>
-                            <button type="button" class="btn-plus-permainan" data-id="${id}" data-harga="${harga}">+</button>
-                            <div class="text-item"><span id="subtotal_${id}">${harga}</span></div>
-                            <div class="text-item"><button type="button" class="hapus-permainan" data-id="${id}">Hapus</button></div>
-                        </div>
-                    `;
-                    document.getElementById('detail-permainan').appendChild(div);
-
-                    totalKeseluruhan += harga;
-                    document.getElementById('total-keseluruhan').textContent = totalKeseluruhan.toLocaleString('id-ID');
-
-                    document.querySelector(`#permainan-${id} .btn-plus-permainan`).addEventListener('click', (event) => {
-                        event.preventDefault();
-                        let jumlah = parseInt(document.getElementById(id).value);
-                        jumlah++;
-                        document.getElementById(id).value = jumlah;
-                        const subtotal = harga * jumlah;
-                        document.getElementById(`subtotal_${id}`).textContent = subtotal;
-                        totalKeseluruhan += harga;
-                        document.getElementById('total-keseluruhan').textContent = totalKeseluruhan.toLocaleString('id-ID');
-                    });
-
-                    document.querySelector(`#permainan-${id} .btn-minus-permainan`).addEventListener('click', (event) => {
-                        event.preventDefault();
-                        let jumlah = parseInt(document.getElementById(id).value);
-                        if (jumlah > 1) {
-                            jumlah--;
-                            document.getElementById(id).value = jumlah;
-                            const subtotal = harga * jumlah;
-                            document.getElementById(`subtotal_${id}`).textContent = subtotal;
-                            totalKeseluruhan -= harga;
-                            document.getElementById('total-keseluruhan').textContent = totalKeseluruhan.toLocaleString('id-ID');
-                        }
-                    });
-
-                    document.querySelector(`#permainan-${id} .hapus-permainan`).addEventListener('click', (event) => {
-                        event.preventDefault();
-                        const subtotal = parseInt(document.getElementById(`subtotal_${id}`).textContent);
-                        totalKeseluruhan -= subtotal;
-                        document.getElementById('total-keseluruhan').textContent = totalKeseluruhan.toLocaleString('id-ID');
-                        document.getElementById(`permainan-${id}`).remove();
-                    });
-                }
-            });
-        });
-
-        // Form validation to ensure at least one ticket is selected
-        document.getElementById('booking-form').addEventListener('submit', function(event) {
-            if (!document.querySelector('#detail-permainan > div')) {
-                event.preventDefault();
-                alert('Anda harus memesan setidaknya satu tiket permainan .');
-            }
-        });
-    </script>
 </body>
 </html>
