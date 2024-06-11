@@ -111,7 +111,7 @@
                     <div class="grid-item"><label for="nama">Nama*</label></div>
                     <div class="grid-item"><label for="email"></label></div>
 
-                    <div class="grid-item"><input type="text" id="nama" name="nama" required pattern="[A-Za-z]+"></div>
+                    <div class="grid-item"><input type="text" id="nama" name="nama" required pattern="[A-Za-z ]+"></div>
                 </div>
 
                 <div class="subgrid">
