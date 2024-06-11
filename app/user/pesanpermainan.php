@@ -271,7 +271,6 @@
         } catch (PDOException $e) {
             echo "Connecting Failed: " . $e->getMessage();
         }
-        var_dump($kodebooking);
         ?>
 
         <form id="booking-form" action="proses_permainan.php" method="POST">
