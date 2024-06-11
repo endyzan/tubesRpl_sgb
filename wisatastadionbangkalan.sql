@@ -282,7 +282,7 @@ CREATE TABLE `permainan` (
 
 INSERT INTO `permainan` (`id_permainan`, `nama_permainan`, `durasi`, `harga`) VALUES
 ('ML02', 'MOBIL LISTRIK (AKI)', 15, 15000),
-('DRAW01', 'MELUKIS ANAK-ANAK', 60, 10000),
+('ML01', 'MELUKIS ANAK-ANAK', 60, 10000),
 ('IB01', 'ISTANA BALON', 60, 10000),
 ('FISHING01', 'MANCING MANIA', 15, 10000),
 ('OD01', 'ODONG ODONG (3 putaran)', 15, 15000),
