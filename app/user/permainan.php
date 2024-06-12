@@ -295,59 +295,7 @@
             <h1>ZONA PERMAINAN STADION GELORA BANGKALAN</h1>
         </div>
         <main>
-            <div class="game">
-                <img src="../../asset/img/mobil_listrik.jpg" alt="MOBIL LISTRIK">
-                <div class="game-info">
-                    <h3>MOBIL LISTRIK</h3>
-                    <p><strong>Deskripsi: </strong></p>
-                    <p> Permainan mobil listrik anak-anak adalah jenis mainan yang memungkinkan anak-anak merasakan pengalaman mengendarai 
-                        mobil mini yang mirip dengan kendaraan sesungguhnya. Mobil listrik ini umumnya dirancang untuk anak-anak berusia antara 
-                        3 hingga 8 tahun. </p>
-                    <p><strong>Waktu Permainan: </strong></p>
-                    <p>15 Menit</p>
-                    <p><strong>Jam Operasional: </strong></p>
-                    <p>16.30 - 22.00 WIB</p>
-                    <p><strong>Fasilitas: </strong></p>
-                    <p>-</p>
-                    <p><strong>Harga: </strong></p>
-                    <p>Rp. 15.000</p>
-                </div>
-            </div>
-            <div class="game">
-                <img src="../../asset/img/Melukis.jpg" alt="MELUKIS ANAK-ANAK">
-                <div class="game-info">
-                    <h3>MELUKIS ANAK-ANAK</h3>
-                    <p><strong>Deskripsi: </strong></p>
-                    <p> Permainan melukis anak-anak adalah kegiatan kreatif yang melibatkan anak-anak dalam melukis untuk 
-                        mengembangkan keterampilan seni.</p>
-                    <p><strong>Waktu Permainan: </strong></p>
-                    <p>Sampai lukisan selesai</p>
-                    <p><strong>Jam Operasional: </strong></p>
-                    <p>16.30 - 22.00 WIB</p>
-                    <p><strong>Fasilitas: </strong></p>
-                    <p>Kursi, cat air, alat lukis (kuas), papan lukis</p>
-                    <p><strong>Harga: </strong></p>
-                    <p>Rp. 10.000/gambar</p>
-                </div>
-            </div>
-            <div class="game">
-                <img src="../../asset/img/istana_boneka.jpg" alt="ISTANA BONEKA">
-                <div class="game-info">
-                    <h3>ISTANA BONEKA</h3>
-                    <p><strong>Deskripsi: </strong></p>
-                    <p> Balon istana boneka anak-anak adalah mainan besar yang berbentuk istana, yang dirancang untuk 
-                        memberikan ruang bermain yang aman dan menyenangkan bagi anak-anak.</p>
-                    <p><strong>Waktu Permainan: </strong></p>
-                    <p>Sepuasnya</p>
-                    <p><strong>Jam Operasional: </strong></p>
-                    <p>16.30 - 22.00 WIB</p>
-                    <p><strong>Fasilitas: </strong></p>
-                    <p>Playground, mandi bola</p>
-                    <p><strong>Harga: </strong></p>
-                    <p>Rp. 10.000</p>
-                </div>
-            </div>
-            <div class="game">
+        <div class="game">
                 <img src="../../asset/img/mancing.jpg" alt="MANCING MANIA">
                 <div class="game-info">
                     <h3>MANCING MANIA</h3>
@@ -365,20 +313,20 @@
                 </div>
             </div>
             <div class="game">
-                <img src="../../asset/img/odong-odong.jpg" alt="ODONG-ODONG">
+                <img src="../../asset/img/istana_boneka.jpg" alt="ISTANA BONEKA">
                 <div class="game-info">
-                    <h3>ODONG-ODONG</h3>
+                    <h3>ISTANA BALON</h3>
                     <p><strong>Deskripsi: </strong></p>
-                    <p> Odong-odong adalah sebuah permainan atau wahana hiburan anak-anak. Odong-odong berbentuk seperti 
-                        kendaraan kecil yang dihiasi dengan berbagai bentuk, warna yang cerah dan lampu-lampu yang berwarna-warni.</p>
+                    <p> Istana Balon anak-anak adalah mainan besar yang berbentuk istana, yang dirancang untuk 
+                        memberikan ruang bermain yang aman dan menyenangkan bagi anak-anak.</p>
                     <p><strong>Waktu Permainan: </strong></p>
-                    <p>15 menit</p>
+                    <p>60 menit</p>
                     <p><strong>Jam Operasional: </strong></p>
                     <p>16.30 - 22.00 WIB</p>
                     <p><strong>Fasilitas: </strong></p>
-                    <p>Lagu anak-anak</p>
+                    <p>Playground, mandi bola</p>
                     <p><strong>Harga: </strong></p>
-                    <p>Rp. 20.000</p>
+                    <p>Rp. 10.000</p>
                 </div>
             </div>
             <div class="game">
@@ -395,9 +343,61 @@
                     <p><strong>Fasilitas: </strong></p>
                     <p>-</p>
                     <p><strong>Harga: </strong></p>
-                    <p>Rp. 5.000</p>
+                    <p>Rp. 15.000</p>
                 </div>
             </div>
+            <div class="game">
+                <img src="../../asset/img/Melukis.jpg" alt="MELUKIS ANAK-ANAK">
+                <div class="game-info">
+                    <h3>MELUKIS ANAK-ANAK</h3>
+                    <p><strong>Deskripsi: </strong></p>
+                    <p> Permainan melukis anak-anak adalah kegiatan kreatif yang melibatkan anak-anak dalam melukis untuk 
+                        mengembangkan keterampilan seni.</p>
+                    <p><strong>Waktu Permainan: </strong></p>
+                    <p>60 menit</p>
+                    <p><strong>Jam Operasional: </strong></p>
+                    <p>16.30 - 22.00 WIB</p>
+                    <p><strong>Fasilitas: </strong></p>
+                    <p>Kursi, cat air, alat lukis (kuas), papan lukis</p>
+                    <p><strong>Harga: </strong></p>
+                    <p>Rp. 10.000/gambar</p>
+                </div>
+            </div>
+            <div class="game">
+                <img src="../../asset/img/mobil_listrik.jpg" alt="MOBIL LISTRIK">
+                <div class="game-info">
+                    <h3>MOBIL LISTRIK (AKI)</h3>
+                    <p><strong>Deskripsi: </strong></p>
+                    <p> Permainan mobil listrik anak-anak adalah jenis mainan yang memungkinkan anak-anak merasakan pengalaman mengendarai 
+                        mobil mini yang mirip dengan kendaraan sesungguhnya. Mobil listrik ini umumnya dirancang untuk anak-anak berusia antara 
+                        3 hingga 8 tahun. </p>
+                    <p><strong>Waktu Permainan: </strong></p>
+                    <p>15 Menit</p>
+                    <p><strong>Jam Operasional: </strong></p>
+                    <p>16.30 - 22.00 WIB</p>
+                    <p><strong>Fasilitas: </strong></p>
+                    <p>-</p>
+                    <p><strong>Harga: </strong></p>
+                    <p>Rp. 15.000</p>
+                </div>
+            </div>
+            <div class="game">
+                <img src="../../asset/img/odong-odong.jpg" alt="ODONG-ODONG">
+                <div class="game-info">
+                    <h3>ODONG-ODONG</h3>
+                    <p><strong>Deskripsi: </strong></p>
+                    <p> Odong-odong adalah sebuah permainan atau wahana hiburan anak-anak. Odong-odong berbentuk seperti 
+                        kendaraan kecil yang dihiasi dengan berbagai bentuk, warna yang cerah dan lampu-lampu yang berwarna-warni.</p>
+                    <p><strong>Waktu Permainan: </strong></p>
+                    <p>15 menit</p>
+                    <p><strong>Jam Operasional: </strong></p>
+                    <p>16.30 - 22.00 WIB</p>
+                    <p><strong>Fasilitas: </strong></p>
+                    <p>Lagu anak-anak</p>
+                    <p><strong>Harga: </strong></p>
+                    <p>Rp. 15.000</p>
+                </div>
+            </div>  
         </main>
 
 
